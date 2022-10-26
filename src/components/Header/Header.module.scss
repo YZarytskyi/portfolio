@@ -7,9 +7,6 @@ header {
   z-index: 100;
   width: 100%;
   height: 10rem;
-  background: radial-gradient(ellipse at bottom, #0e264170 0%, #090A0F70 100%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   backdrop-filter: blur(10px);
 }
 
@@ -42,11 +39,19 @@ header {
 
 .navList {
   display: flex;
-  gap: 4rem;
+}
+
+.navLink {
+  padding: 3rem 2rem;
+  font-size: 1.8rem;
 }
 
 .resumeLink {
   padding: 1rem;
   border-radius: 3px;
   border: 1px solid $color-accent;
+  &:hover {
+    color: $color-main;
+    animation: glow 1s infinite;
+  }
 }

@@ -5,11 +5,13 @@ import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import FixContacts from "./components/FixContacts/FixContacts";
 
 function App() {
   return (
     <>
       <Header />
+      <FixContacts />
       <main>
         <Home />
         <About />

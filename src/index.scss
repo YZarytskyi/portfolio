@@ -1,3 +1,4 @@
+@import "./reset.scss";
 @import "./vars.scss";
 
 html {
@@ -9,13 +10,13 @@ html {
 body {
   height: 100%;
   margin: 0;
-  color: $color-main;
-  background: radial-gradient(ellipse at bottom, #0e2641 0%, #090A0F 100%);
+  background-color: #0e1018;
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
-
+  color: $color-main;
+  letter-spacing: 0.04em;
   font-size: 1.6rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

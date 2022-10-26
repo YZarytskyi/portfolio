@@ -3,6 +3,7 @@
 .home {
   height: 100vh;
   position: relative;
+  background: radial-gradient(ellipse at bottom, #0e2641 0%, #090A0F 100%);
 }
 
 .backgroundAnimated {
@@ -16,7 +17,7 @@
 .homeContainer {
   margin: 0 auto;
   height: 100%;
-  width: 65%;
+  width: 73%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +25,9 @@
 }
 
 .homeText {
+  padding: 6rem 6rem 2rem;
   font-size: 2rem;
+  cursor: default;
   > span:first-child {
     display: block;
   }
@@ -43,20 +46,24 @@
 }
 
 .homeBtn {
+  margin: 2rem 0rem 6rem 6rem;
   padding: 1.5rem 2rem;
   background-color: transparent;
   border: 1px solid $color-accent;
+  border-radius: 4px;
   font-size: 1.6rem;
   &:hover {
-    color: $color-accent;
+    color: $color-main;
+    animation: glow 1s infinite;
   }
 }
 
 
 
 
+
 .circleContainer {
-  $particleNum: 100;
+  $particleNum: 120;
   $particleColor: hsl(180, 100%, 80%);
   position: absolute;
   transform: translateX(-10vw);
@@ -113,7 +120,7 @@
       width: $circleSize + px;
       height: $circleSize + px;
 
-      $startPositionY: random(10) + 100;
+      $startPositionY: random(10) + 90;
       $framesName: "move-frames-" + $i;
       $moveDuration: 28000 + random(9000) + ms;
 
