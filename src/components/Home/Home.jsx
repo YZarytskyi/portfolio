@@ -3,7 +3,7 @@ import s from './Home.module.scss';
 import Tilt from 'react-parallax-tilt';
 
 const Home = () => {
-  const QTY = 120;
+  const QTY = 130;
   const arr = [];
   for (let i = 0; i < QTY; i++) {
     arr.push(i);

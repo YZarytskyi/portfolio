@@ -1,12 +1,18 @@
 @import '../../vars.scss';
 
 .about {
+  position: relative;
+  z-index: 2;
   padding: 100px 0;
   font-size: 1.8;
   line-height: 1.7;
+  background-color: $bg-color-dark;
+  overflow: hidden;
 }
 
-.aboutContainer {
+.container {
+  position: relative;
+  max-width: 1200px;
   width: 60%;
   height: 100%;
   margin: 0 auto;
@@ -16,25 +22,14 @@
   justify-content: center;
 }
 
-.aboutTitle {
-  padding: 0 0 2rem 0;
-  cursor: default;
-  text-align: center;
-  line-height: 2;
-  font-size: 4rem;
-  font-weight: 500;
-
-  &::after {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    content: "";
-    display: block;
-    width: 400px;
-    height: 3px;
-    border-radius: 50%;
-    background-color: $color-accent;
-  }
+.circle {
+  position: absolute;
+  right: -104%;
+  width: 1000px;
+  height: 1000px;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: rgb(153, 0, 255);
 }
 
 .textImgContainer {
@@ -43,7 +38,7 @@
   justify-content: center;
 }
 
-.aboutText {
+.text {
   margin-right: 5rem;
 }
 

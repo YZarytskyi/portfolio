@@ -1,53 +1,58 @@
 @import '../../vars.scss';
 
 .home {
-  height: 100vh;
   position: relative;
+  height: 100vh;
   background: radial-gradient(ellipse at bottom, #0e2641 0%, #090A0F 100%);
+  background-attachment: fixed;
 }
 
 .backgroundAnimated {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed;
 }
 
 .homeContainer {
-  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  z-index: 1;
+  max-width: 1200px;
   height: 100%;
   width: 73%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  transform: translateX(-50%);
 }
 
 .homeText {
   padding: 6rem 6rem 2rem;
-  font-size: 2rem;
+  font-size: 2.1rem;
+  line-height: 2.2;
   cursor: default;
   > span:first-child {
     display: block;
   }
   > span:nth-child(2) {
+    margin-top: 0.8rem;
     display: block;
     font-weight: 700;
     font-size: 7rem;
+    line-height: 1.1;
   }
   > span:nth-child(3) {
+    margin-bottom: 1.5rem;
     display: block;
     color: rgb(102, 111, 238);
     font-weight: 700;
     font-size: 7rem;
-    margin-bottom: 1.5rem;
+    line-height: 1.3;
   }
 }
 
 .homeBtn {
   margin: 2rem 0rem 6rem 6rem;
-  padding: 1.5rem 2rem;
+  padding: 1.7rem 2rem;
   background-color: transparent;
   border: 1px solid $color-accent;
   border-radius: 4px;
@@ -63,7 +68,7 @@
 
 
 .circleContainer {
-  $particleNum: 120;
+  $particleNum: 130;
   $particleColor: hsl(180, 100%, 80%);
   position: absolute;
   transform: translateX(-10vw);
