@@ -1,6 +1,21 @@
 @import '../../vars.scss';
 
-footer {
+.pageFooter {
+  position: relative;
+  z-index: 2;
   padding: 3rem 0;
-  background-color: $bg-color-dark;
+  background-color: #0e1018;
+  text-align: center;
+}
+
+.list {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  padding: 4rem 0;
+  box-shadow: 0 3px 2px -2px gray;
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  font-size: 2rem;
 }
