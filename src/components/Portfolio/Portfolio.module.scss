@@ -100,15 +100,17 @@
   left: -22%;
   display: inline-block;
   color: $color-main;
-  padding: 28px;
+  background-color: transparent;
+  padding: 30px;
   border-radius: 50%;
+  font-size: 1.7rem;
 
   &__circle {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     box-shadow: 0 0 1px 1px #fff;
     transform: translate(-50%, -50%);
@@ -120,8 +122,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #ffffff;
     display: flex;

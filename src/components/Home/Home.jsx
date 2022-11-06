@@ -23,7 +23,7 @@ const Home = () => {
             </span>
             <span>Yurii Zarytskyi</span>
             <span>I’m a Frontend Developer</span>
-            Let’s build a better digital world together.
+            Let’s build a better digital world together
           </p>
         </Tilt>
         <a href="#portfolio" className={s.homeBtn}>

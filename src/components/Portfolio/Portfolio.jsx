@@ -44,7 +44,7 @@ const Portfolio = () => {
               <img src={crypto1} alt="Crypto project" className={s.crypto1} />
             </div>
           </div>
-          <a href="" className={s.btn}>
+          <button href="" className={s.btn}>
             <span className={s.btn__circle}></span>
             <span className={s.btn__whiteCircle}>
               <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
@@ -52,7 +52,7 @@ const Portfolio = () => {
               </svg>
             </span>
             <span className={s.btn__text}>Discover the project</span>
-          </a>
+          </button>
           <div className={s.iphone}>
             <img src={crypto2} alt="Crypto project" className={s.crypto2} />
           </div>

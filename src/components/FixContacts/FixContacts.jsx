@@ -41,7 +41,7 @@ const FixContacts = () => {
         </li>
         <li className={s.socialItem}>
           <a
-            href="www.linkedin.com/in/yurii-zarytskyi-147b8723b"
+            href="www.linkedin.com/in/yurii-zarytskyi"
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={s.socialLink}>
