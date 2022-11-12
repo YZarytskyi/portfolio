@@ -2,9 +2,7 @@ $color-main: #e9e9e9;
 $color-secondary: #1f1f1f;
 $color-accent: #666fee;
 $bg-color-dark: #090A0F;
-
 $input-shadow: $color-accent 0px 0px 6px 0.5px;
-
 
 
 @mixin input {
@@ -40,6 +38,13 @@ $input-shadow: $color-accent 0px 0px 6px 0.5px;
   font-size: 4rem;
   font-weight: 500;
 
+  @media (max-width: 1199px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 479px) {
+    font-size: 3rem;
+  }
+
   &::after {
     position: relative;
     bottom: 0;
@@ -50,6 +55,16 @@ $input-shadow: $color-accent 0px 0px 6px 0.5px;
     height: 3px;
     border-radius: 50%;
     background-color: $color-accent;
+
+    @media (max-width: 1199px) {
+      width: 350px;
+    }
+    @media (max-width: 767px) {
+      width: 300px;
+    }
+    @media (max-width: 479px) {
+      width: 250px;
+    }
   }
 }
 

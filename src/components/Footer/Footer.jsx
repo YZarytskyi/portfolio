@@ -17,7 +17,7 @@ const Footer = () => {
       <a href="#contact" className={s.link} >CONTACT</a>
     </li>
   </ul>
-  <p>&copy; 2022 Yurii Zarytskyi. All Rights Reserved</p>
+  <p className={s.copyright}>&copy; 2022 Yurii Zarytskyi. All Rights Reserved</p>
   </footer>;
 };
 

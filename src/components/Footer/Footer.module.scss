@@ -3,19 +3,62 @@
 .pageFooter {
   position: relative;
   z-index: 2;
-  padding: 3rem 0;
+  padding: 6rem 0 3rem 0;
   background-color: #0e1018;
   text-align: center;
+
+  @media (max-width: 1199px) {
+    gap: 5rem;
+    padding-top: 5rem;
+  }
+  @media (max-width: 479px) {
+    padding-top: 4rem;
+  }
 }
 
 .list {
   max-width: 1200px;
+  width: 73%;
   margin: 0 auto;
   margin-bottom: 3rem;
-  padding: 4rem 0;
+  padding-bottom: 6rem;
   box-shadow: 0 3px 2px -2px gray;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 7rem;
   font-size: 2rem;
+  letter-spacing: 0.06em;
+
+  @media (max-width: 1199px) {
+    gap: 5rem;
+    padding-bottom: 5rem;
+    font-size: 1.8rem;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+    gap: 4rem;
+    font-size: 1.6rem;
+  }
+  @media (max-width: 479px) {
+    gap: 1.8rem;
+    padding-bottom: 4rem;
+    font-size: 1.5rem;
+  }
+  @media (max-width: 380px) {
+    gap: 1.7rem;
+    font-size: 1.3rem;
+  }
+}
+
+.copyright {
+  @media (max-width: 767px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 479px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 380px) {
+    font-size: 1.2rem;
+  }
 }

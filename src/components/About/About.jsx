@@ -18,21 +18,19 @@ const About = () => {
         </Tilt>
         <div className={s.textImgContainer}>
           <p className={s.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed ex pharetra,
-            tincidunt ante vel, pulvinar enim. Nam aliquam eros quis augue fermentum feugiat. Ut non
-            varius eros. Curabitur semper venenatis dui, at ornare nibh bibendum vel. Donec nulla
-            velit, vehicula a ex vitae, aliquet suscipit libero. Nunc sit amet magna nisl.
+            All of my knowledge has been gained with hundreds hours of learning and practice within
+            JavaScript Bootcamp course from GoIT school and self-education daily. It gives me a
+            strong understanding of the programming process which allows me to provide better
+            solutions and write a clear, readable and supportable code.
           </p>
-          <div className={s.photoContainer}>
-            <img src={me} alt="Yurii Zarytskyi" className={s.photo} />
+          <div className={s.circleImgContainer}>
+            <div className={s.circle}></div>
+            <div className={s.photoContainer}>
+              <img src={me} alt="Yurii Zarytskyi" className={s.photo} />
+            </div>
           </div>
         </div>
-
         <Tabs />
-
-        <div className={s.circle}>
-
-        </div>
       </div>
     </section>
   );

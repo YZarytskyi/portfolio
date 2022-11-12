@@ -1,12 +1,58 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import s from './Portfolio.module.scss';
-import crypto1 from '../../assets/crypto1.png';
-import crypto2 from '../../assets/crypto2.png';
+import crypto1 from '../../assets/crypto1.jpg';
+import crypto2 from '../../assets/crypto2.jpg';
+import eShop from '../../assets/eShop.jpg';
+import eShop2 from '../../assets/eshop2.png';
+import iceCream from '../../assets/iceCream.jpg';
+import iceCream2 from '../../assets/iceCream2.png';
 import { useEffect } from 'react';
+
+const projectLinks = [
+  'https://yzarytskyi.github.io/finance-crypto/',
+  'https://yzarytskyi.github.io/e-shop/',
+  'https://yzarytskyi.github.io/ice-cream-team-project/'
+];
+const desktopImages = [crypto1, eShop, iceCream];
+const mobileImages = [crypto2, eShop2, iceCream2];
 
 const Portfolio = () => {
   const refWrapper = useRef(null);
   const refImage = useRef(null);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isImgHovered, setIsImgHovered] = useState(false);
+
+  useEffect(() => {
+    const mouseover = () => setIsImgHovered(true);
+    const mouseout = () => setIsImgHovered(false);
+
+    refWrapper.current.addEventListener('mouseover', mouseover);
+    refWrapper.current.addEventListener('mouseout', mouseout);
+
+    return () => {
+      refWrapper.current.removeEventListener('mouseover', mouseover);
+      refWrapper.current.removeEventListener('mouseout', mouseout);
+    };
+  }, []);
+
+  useEffect(() => {
+    let interval;
+    if (isImgHovered) {
+      clearInterval(interval);
+    } else {
+      interval = setInterval(() => {
+        setActiveIndex((current) => {
+          const nextIndex = current === desktopImages.length - 1 ? 0 : current + 1;
+          return nextIndex;
+        });
+      }, 7000);
+    }
+    return () => clearInterval(interval);
+  }, [isImgHovered]);
+
+  const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
+  const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
 
   useEffect(() => {
     const wrapper = refWrapper.current;
@@ -28,6 +74,7 @@ const Portfolio = () => {
 
     wrapper.addEventListener('mousemove', onMouseMoveHandler);
     wrapper.addEventListener('mouseleave', onMouseLeaveHandler);
+
     return () => {
       wrapper.removeEventListener('mousemove', onMouseMoveHandler);
       wrapper.removeEventListener('mouseleave', onMouseLeaveHandler);
@@ -38,10 +85,26 @@ const Portfolio = () => {
     <section id="portfolio" className={s.portfolio}>
       <div className={s.container}>
         <div className={s.presentation}>
-          <div className={s.imac} ref={refImage}>
-            <div className={s.wrapper2} ref={refWrapper}></div>
-            <div className={s.wrapper}>
-              <img src={crypto1} alt="Crypto project" className={s.crypto1} />
+          <div className={s.iMac} ref={refImage}>
+            <div className={s.iMacWrapper} ref={refWrapper}></div>
+            <div className={s.iMacWrapper2}>
+              <img
+                src={desktopImages[prevImgIndex]}
+                className={s.sliderImgPrev + ' ' + s.sliderImg}
+                key={prevImgIndex}
+              />
+
+              <img
+                src={desktopImages[activeIndex]}
+                className={s.sliderImg + ' ' + s.imageLg}
+                key={activeIndex}
+              />
+
+              <img
+                src={desktopImages[nextImgIndex]}
+                className={s.sliderImgNext + ' ' + s.sliderImg}
+                key={nextImgIndex}
+              />
             </div>
           </div>
           <button href="" className={s.btn}>
@@ -51,10 +114,34 @@ const Portfolio = () => {
                 <path d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"></path>
               </svg>
             </span>
-            <span className={s.btn__text}>Discover the project</span>
+            <a
+              href={projectLinks[activeIndex]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.btn__text}>
+              Discover the project
+            </a>
           </button>
           <div className={s.iphone}>
-            <img src={crypto2} alt="Crypto project" className={s.crypto2} />
+            <div className={s.iphoneWrapper}>
+            <img
+              src={mobileImages[prevImgIndex]}
+              className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
+              key={prevImgIndex}
+            />
+
+            <img
+              src={mobileImages[activeIndex]}
+              className={s.mobilePhoto}
+              key={activeIndex}
+            />
+
+            <img
+              src={mobileImages[nextImgIndex]}
+              className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
+              key={nextImgIndex}
+            />
+            </div>
           </div>
         </div>
       </div>
