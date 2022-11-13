@@ -10,6 +10,9 @@
 .backgroundAnimated {
   position: fixed;
   z-index: 3;
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .homeContainer {

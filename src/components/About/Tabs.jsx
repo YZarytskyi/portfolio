@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import s from './About.module.scss';
+import sprite from '../../assets/icons.svg';
 
 const Tabs = () => {
   const [tab, setTab] = useState(1);
@@ -17,7 +18,7 @@ const Tabs = () => {
             href=""
             className={s.tab + ' ' + (tab === 1 && s.tabCurrent)}
             onClick={() => toggleTab(1)}>
-            Tab1
+            Tooling
           </button>
         </li>
         <li>
@@ -25,42 +26,79 @@ const Tabs = () => {
             href=""
             className={s.tab + ' ' + (tab === 2 && s.tabCurrent)}
             onClick={() => toggleTab(2)}>
-            Tab2
-          </button>
-        </li>
-        <li>
-          <button
-            href=""
-            className={s.tab + ' ' + (tab === 3 && s.tabCurrent)}
-            onClick={() => toggleTab(3)}>
-            Tab3
+            Certification
           </button>
         </li>
       </ul>
-      
+
       <div className={s.tabContentContainer}>
-        <p className={s.tabContent + ' ' + (tab === 1 && s.tabContentCurrent)}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed ex pharetra,
-          tincidunt ante vel, pulvinar enim. Nam aliquam eros quis augue fermentum feugiat. Ut non
-          varius eros. Curabitur semper venenatis dui, at ornare nibh bibendum vel. Donec nulla
-          velit, vehicula a ex vitae, aliquet suscipit libero. Nunc sit amet magna nisl.
-        </p>
-        <p className={s.tabContent + ' ' + (tab === 2 && s.tabContentCurrent)}>
-          Sed efficitur libero non nibh pellentesque pharetra. Praesent consequat eu lectus nec
-          dignissim. Pellentesque efficitur lobortis nulla, ut laoreet leo imperdiet at. Phasellus
-          commodo purus ut libero rhoncus, quis rhoncus nulla elementum. Fusce porta tristique
-          lectus, quis ornare tortor mattis in. Aenean lobortis rhoncus sodales. Etiam porta massa
-          mi, nec bibendum nisl egestas et. Nullam pretium lectus ante, at pulvinar nibh varius
-          quis. Praesent accumsan semper tempus.
-        </p>
-        <p className={s.tabContent + ' ' + (tab === 3 && s.tabContentCurrent)}>
-          Duis porttitor massa nec neque consequat, et hendrerit enim fringilla. Quisque lacus ante,
-          vehicula eu est in, rutrum commodo arcu. Donec ut sollicitudin mi. Suspendisse porttitor
-          libero est, at lobortis augue congue eu. Nam lectus nisl, luctus eget nulla consequat,
-          condimentum laoreet velit. Suspendisse interdum efficitur nisi ut viverra. Vestibulum
-          vitae justo cursus, congue libero eget, faucibus quam. Morbi et vulputate eros. Morbi in
-          rhoncus nunc.
-        </p>
+        <div className={s.tabContent + ' ' + (tab === 1 && s.tabContentCurrent)}>
+          <ul className={s.toolsList}>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-html`}></use>
+              </svg>
+              HTML 5
+            </li>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-css`}></use>
+              </svg>
+              CSS3
+            </li>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-js`}></use>
+              </svg>
+              JavaScript
+            </li>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-typescript`}></use>
+              </svg>
+              TypeScript
+            </li>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-react`}></use>
+              </svg>
+              React
+            </li>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-redux`}></use>
+              </svg>
+              Redux
+            </li>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-git`}></use>
+              </svg>
+              Git
+            </li>
+            <li className={s.toolsItem}>
+              <svg className={s.toolsIcon}>
+                <use href={`${sprite}#icon-sass`}></use>
+              </svg>
+              Sass
+            </li>
+          </ul>
+        </div>
+        <div className={s.tabContent + ' ' + (tab === 2 && s.tabContentCurrent)}>
+          <p className={s.certification}>
+            <a
+              href="https://goit.global/ua/courses/bootcamp/"
+              target="_blank"
+              rel="noopener noreferrer nofollow">
+              Fullstack Bootcamp, GoIt, 2022
+            </a>
+            Intensive 5-month-long course, with over 400 hours of coding. HTML, CSS, Javascript,
+            React, Node JS, additional coursework on teamwork, soft skills, project management, agile
+            methodologies and technologies and tools like Redux state management library, Firebase
+            Firestore Cloud database, Jest testing framework. Built projects from zero to production
+            level.
+          </p>
+        </div>
       </div>
     </div>
   );

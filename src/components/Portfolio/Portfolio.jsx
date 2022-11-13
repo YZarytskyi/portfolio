@@ -15,6 +15,7 @@ const projectLinks = [
 ];
 const desktopImages = [crypto1, eShop, iceCream];
 const mobileImages = [crypto2, eShop2, iceCream2];
+const projectTitles = ['Crypto', 'E-commerce', 'Ice-cream'];
 
 const Portfolio = () => {
   const refWrapper = useRef(null);
@@ -22,6 +23,10 @@ const Portfolio = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
+  const [slideChangeClick, setSlideChangeClick] = useState(null);
+
+  const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
+  const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
 
   useEffect(() => {
     const mouseover = () => setIsImgHovered(true);
@@ -38,21 +43,22 @@ const Portfolio = () => {
 
   useEffect(() => {
     let interval;
-    if (isImgHovered) {
+    if (isImgHovered || slideChangeClick) {
       clearInterval(interval);
+      if (slideChangeClick) {
+        setActiveIndex(Number(slideChangeClick));
+        setSlideChangeClick(null);
+      }
     } else {
       interval = setInterval(() => {
-        setActiveIndex((current) => {
-          const nextIndex = current === desktopImages.length - 1 ? 0 : current + 1;
+        setActiveIndex((currentIndex) => {
+          const nextIndex = currentIndex === desktopImages.length - 1 ? 0 : currentIndex + 1;
           return nextIndex;
         });
       }, 7000);
     }
     return () => clearInterval(interval);
-  }, [isImgHovered]);
-
-  const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
-  const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
+  }, [isImgHovered, slideChangeClick]);
 
   useEffect(() => {
     const wrapper = refWrapper.current;
@@ -81,9 +87,14 @@ const Portfolio = () => {
     };
   }, []);
 
+  function onClickSlideChange(e) {
+    setSlideChangeClick(e.target.dataset.index);
+  }
+
   return (
     <section id="portfolio" className={s.portfolio}>
       <div className={s.container}>
+        <h2 className={s.title + ' ' + s.titlePortfolio}>Portfolio</h2>
         <div className={s.presentation}>
           <div className={s.iMac} ref={refImage}>
             <div className={s.iMacWrapper} ref={refWrapper}></div>
@@ -109,23 +120,21 @@ const Portfolio = () => {
           </div>
           <div className={s.iphone}>
             <div className={s.iphoneWrapper}>
-            <img
-              src={mobileImages[prevImgIndex]}
-              className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
-              key={prevImgIndex}
-            />
+              <a href={projectLinks[activeIndex]} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={mobileImages[prevImgIndex]}
+                  className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
+                  key={prevImgIndex}
+                />
 
-            <img
-              src={mobileImages[activeIndex]}
-              className={s.mobilePhoto}
-              key={activeIndex}
-            />
+                <img src={mobileImages[activeIndex]} className={s.mobilePhoto} key={activeIndex} />
 
-            <img
-              src={mobileImages[nextImgIndex]}
-              className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
-              key={nextImgIndex}
-            />
+                <img
+                  src={mobileImages[nextImgIndex]}
+                  className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
+                  key={nextImgIndex}
+                />
+              </a>
             </div>
           </div>
           <button href="" className={s.btn}>
@@ -144,6 +153,17 @@ const Portfolio = () => {
             </a>
           </button>
         </div>
+        <ul className={s.projectList} onClick={(e) => onClickSlideChange(e)}>
+          {projectTitles.map((title, i) => (
+            <li className={s.projectItem} key={i}>
+              <button
+                className={s.projectBtn + ' ' + (i === activeIndex && s.activeProject)}
+                data-index={i}>
+                {title}
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

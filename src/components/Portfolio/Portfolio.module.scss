@@ -10,7 +10,7 @@
     padding: 6rem 0;
   }
   @media (max-width: 980px) {
-    padding: 4rem 0 13rem 0;
+    padding: 4rem 0;
   }
 }
 
@@ -22,29 +22,30 @@
   align-items: center;
 }
 
+.titlePortfolio {
+  display: none;
+  @media (max-width: 980px) {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
 .presentation {
   position: relative;
   width: 68%;
   max-width: 850px;
-  height: 640px;
+  height: 600px;
 
-  @media (max-width: 1437px) {
-    height: 620px;
-  }
+
   @media (max-width: 1376px) {
-    height: 600px;
-  }
-  @media (max-width: 1335px) {
-    height: 580px;
-  }
-  @media (max-width: 1295px) {
     height: 560px;
   }
-  @media (max-width: 1250px) {
-    height: 540px;
+  @media (max-width: 1295px) {
+    height: 520px;
   }
   @media (max-width: 1199px) {
-    height: 500px;
+    height: 460px;
+    width: 300px;
   }
 }
 
@@ -69,11 +70,11 @@
 
 .iMacWrapper {
   position: absolute;
-  top: 4.8%;
-  left: 4.2%;
+  top: 4.3%;
+  left: 4%;
   z-index: 99;
   width: 91.6%;
-  height: 100%;
+  height: 60%;
 
   &:hover + .iMacWrapper2 .imageLg {
     transform: scale(1.03)
@@ -83,8 +84,8 @@
 
 .iMacWrapper2 {
   position: relative;
-  top: 4.8%;
-  left: 4.2%;
+  top: 4.3%;
+  left: 4%;
   z-index: -1;
   width: 91.7%;
   height: 100%;
@@ -185,21 +186,18 @@
     left: -28%;
   }
   @media (max-width: 1199px) {
-    left: -15%;
+    left: -70%;
+    font-size: 1.5rem;
   }
   @media (max-width: 980px) {
-    top: 103%;
-    left: 27%;
+    display: none;
+    // top: 104%;
+    // left: 15%;
   }
-  @media (max-width: 460px) {
-    left: 20%;
-  }
-  @media (max-width: 415px) {
-    left: 15%;
-  }
-  @media (max-width: 340px) {
-    left: 10.5%;
-  }
+  // @media (max-width: 767px) {
+  //   font-size: 1.4rem;
+  // }
+
 
   &__circle {
     position: absolute;
@@ -211,6 +209,15 @@
     box-shadow: 0 0 1px 1px #fff;
     transform: translate(-50%, -50%);
     transition: transform 0.3s linear;
+
+    @media (max-width: 1199px) {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__whiteCircle {
@@ -225,10 +232,28 @@
     display: flex;
     transition: transform 0.3s ease-in-out;
 
+    @media (max-width: 1199px) {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+    }
+
     svg {
       width: 24px;
       height: 24px;
       margin: auto;
+
+      @media (max-width: 1199px) {
+        width: 21px;
+        height: 21px;
+      }
+      @media (max-width: 767px) {
+        width: 17px;
+        height: 17px;
+      }
     }
   }
 
@@ -240,6 +265,13 @@
     z-index: 2;
     padding: 24px 8px;
     transition: 0.3s linear;
+
+    @media (max-width: 1199px) {
+    padding: 22px 6px;
+    }
+    @media (max-width: 767px) {
+      padding: 20px 4px;
+    }
   }
 
   &:hover, &:focus {
@@ -254,5 +286,74 @@
     .btn__text {
       transform: translate(28px, -50%);
     }
+  }
+}
+
+.projectList {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 20rem;
+
+  @media (max-width: 1199px) {
+    margin-top: 4rem;
+    gap: 10rem;
+  }
+  @media (max-width: 980px) {
+    gap: 8rem;
+  }
+  @media (max-width: 767px) {
+    gap: 3rem;
+  }
+  @media (max-width: 480px) {
+    gap: 1rem;
+  }
+  @media (max-width: 340px) {
+    gap: 0.5rem;
+  }
+}
+
+.projectBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: transparent;
+  font-size: 1.7rem;
+  transition: color 250ms cubic-bezier(0.23, 0.44, 0.29, 0.9);
+
+  @media (max-width: 767px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 340px) {
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &::after {
+    content: "";
+    width: 130%;
+    height: 0.3rem;
+    background-color: $color-accent;
+    border-radius: 40%;
+    transform: scale(0);
+    transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    @media (max-width: 767px) {
+      width: 110%;
+    }
+  }
+}
+
+.activeProject {
+  &::after {
+    transform: scale(1);
   }
 }

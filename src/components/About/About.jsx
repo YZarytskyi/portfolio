@@ -19,7 +19,7 @@ const About = () => {
         <div className={s.textImgContainer}>
           <p className={s.text}>
             All of my knowledge has been gained with hundreds hours of learning and practice within
-            JavaScript Bootcamp course from GoIT school and self-education daily. It gives me a
+            Fullstack Bootcamp course from GoIT school and self-education daily. It gives me a
             strong understanding of the programming process which allows me to provide better
             solutions and write a clear, readable and supportable code.
           </p>
