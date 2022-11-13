@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c97613d9.css",
-    "main.js": "/portfolio/static/js/main.4070e67c.js",
+    "main.css": "/portfolio/static/css/main.603a3f0b.css",
+    "main.js": "/portfolio/static/js/main.54519809.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
     "static/media/iceCream2.png": "/portfolio/static/media/iceCream2.e7d6919c66751fd043a8.png",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
@@ -13,11 +13,11 @@
     "static/media/crypto2.jpg": "/portfolio/static/media/crypto2.20c07232b25b1df78ba5.jpg",
     "static/media/icons.svg": "/portfolio/static/media/icons.0b98f65a06572baf1b6c4619af79e995.svg",
     "index.html": "/portfolio/index.html",
-    "main.c97613d9.css.map": "/portfolio/static/css/main.c97613d9.css.map",
-    "main.4070e67c.js.map": "/portfolio/static/js/main.4070e67c.js.map"
+    "main.603a3f0b.css.map": "/portfolio/static/css/main.603a3f0b.css.map",
+    "main.54519809.js.map": "/portfolio/static/js/main.54519809.js.map"
   },
   "entrypoints": [
-    "static/css/main.c97613d9.css",
-    "static/js/main.4070e67c.js"
+    "static/css/main.603a3f0b.css",
+    "static/js/main.54519809.js"
   ]
 }
