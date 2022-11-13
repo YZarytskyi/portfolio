@@ -36,6 +36,10 @@ header {
 .headerNav {
   display: flex;
   margin-right: 4rem;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .navList {

@@ -58,6 +58,10 @@
   box-shadow: 0 0 300px 30px rgb(132, 0, 255);
   background-color: rgb(132, 0, 255);
   
+  @media (max-width: 1199px) {
+    top: -250%;
+    left: 43.5%;
+  }
   @media (max-width: 767px) {
     display: none;
   }
@@ -99,11 +103,8 @@
   transition: 500ms transform cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 1199px) {
-
-  }
-  @media (max-width: 767px) {
-    width: 170px;
-    height: 170px;
+    width: 160px;
+    height: 160px;
     box-shadow: 0px 0px 5px  $color-accent;
   }
   @media (max-width: 479px) {
