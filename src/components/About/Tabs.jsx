@@ -93,8 +93,8 @@ const Tabs = () => {
               Fullstack Bootcamp, GoIt, 2022
             </a>
             Intensive 5-month-long course, with over 400 hours of coding. HTML, CSS, Javascript,
-            React, Node JS, additional coursework on teamwork, soft skills, project management, agile
-            methodologies and technologies and tools like Redux state management library, Firebase
+            React, Node JS, additional coursework on soft skills, teamwork, project management, agile
+            methodologies and technologies, tools like Redux state management library, Firebase
             Firestore Cloud database, Jest testing framework. Built projects from zero to production
             level.
           </p>

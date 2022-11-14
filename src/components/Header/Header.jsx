@@ -5,7 +5,13 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClickOpenMenu = () => {
-    setIsOpen(isOpen ? false : true);
+    if (isOpen) {
+      document.body.style.overflowY = 'scroll'
+      setIsOpen(false);
+      return
+    }
+    document.body.style.overflowY = 'hidden'
+    setIsOpen(true);
   };
 
   return (
@@ -17,22 +23,22 @@ const Header = () => {
         <nav className={s.headerNav + ' ' + (isOpen ? s.open : "")}>
           <ul className={s.navList}>
             <li className={s.navItem}>
-              <a href="#home" className={s.navLink}>
+              <a href="#home" className={s.navLink} onClick={() => onClickOpenMenu()}>
                 Home
               </a>
             </li>
             <li className={s.navItem}>
-              <a href="#about" className={s.navLink}>
+              <a href="#about" className={s.navLink} onClick={() => onClickOpenMenu()}>
                 About
               </a>
             </li>
             <li className={s.navItem}>
-              <a href="#portfolio" className={s.navLink}>
+              <a href="#portfolio" className={s.navLink} onClick={() => onClickOpenMenu()}>
                 Portfolio
               </a>
             </li>
             <li className={s.navItem}>
-              <a href="#contact" className={s.navLink}>
+              <a href="#contact" className={s.navLink} onClick={() => onClickOpenMenu()}>
                 Contact
               </a>
             </li>

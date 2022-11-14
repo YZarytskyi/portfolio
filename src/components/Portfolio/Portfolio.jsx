@@ -15,7 +15,7 @@ const projectLinks = [
 ];
 const desktopImages = [crypto1, eShop, iceCream];
 const mobileImages = [crypto2, eShop2, iceCream2];
-const projectTitles = ['Crypto', 'E-commerce', 'Ice-cream'];
+const projectTitles = ['Crypto', 'Prestige', 'Ice-cream'];
 
 const Portfolio = () => {
   const refWrapper = useRef(null);

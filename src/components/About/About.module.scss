@@ -151,6 +151,13 @@
   font-size: 2rem;
   background-color: transparent;
 
+  @media (max-width: 1199px) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 767px) {
+    font-size: 1.6rem;
+  }
+
   &::after {
     content: "";
     width: 150%;
