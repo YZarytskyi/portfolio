@@ -8,6 +8,7 @@ const Home = () => {
   for (let i = 0; i < QTY; i++) {
     arr.push(i);
   }
+  
   return (
     <section id="home" className={s.home}>
       <div className={s.homeContainer}>
