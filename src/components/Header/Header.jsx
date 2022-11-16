@@ -20,7 +20,8 @@ const Header = () => {
         <a href="#home" className={s.logo}>
           YZ
         </a>
-        <nav className={s.headerNav + ' ' + (isOpen ? s.open : "")}>
+        <div className={s.menuContainer  + ' ' + (isOpen ? s.open : "")}>
+        <nav className={s.headerNav}>
           <ul className={s.navList}>
             <li className={s.navItem}>
               <a href="#home" className={s.navLink} onClick={() => onClickOpenMenu()}>
@@ -44,7 +45,9 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <button className={s.mobileMenu}>
+        <a className={s.resumeLink}>Resume</a>
+        </div>
+        <button className={s.mobileMenuBtn}>
           <svg
             onClick={onClickOpenMenu}
             className={s.ham + " " + s.ham3 + " " + (isOpen ? s.active : "")}
@@ -64,7 +67,6 @@ const Header = () => {
             />
           </svg>
         </button>
-        <a className={s.resumeLink}>Resume</a>
       </div>
     </header>
   );

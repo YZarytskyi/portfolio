@@ -106,12 +106,12 @@
 
 .sliderImgPrev {
   display: block;
-  transform: translateX(-103%);
+  transform: translateX(-101%);
 }
 
 .sliderImgNext {
   display: block;
-  transform: translateX(103%);
+  transform: translateX(101%);
 }
 
 .iphone {
@@ -157,12 +157,12 @@
 
 .sliderImgMobilePrev {
   display: block;
-  transform: translateX(-103%);
+  transform: translateX(-100%);
 }
 
 .sliderImgMobileNext {
   display: block;
-  transform: translateX(103%);
+  transform: translateX(100%);
 }
 
 .btn {
@@ -191,13 +191,7 @@
   }
   @media (max-width: 980px) {
     display: none;
-    // top: 104%;
-    // left: 15%;
   }
-  // @media (max-width: 767px) {
-  //   font-size: 1.4rem;
-  // }
-
 
   &__circle {
     position: absolute;
