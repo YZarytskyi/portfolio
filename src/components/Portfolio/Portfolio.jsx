@@ -7,6 +7,7 @@ import eShop2 from '../../assets/eshop2.png';
 import iceCream from '../../assets/iceCream.jpg';
 import iceCream2 from '../../assets/iceCream2.png';
 import { useEffect } from 'react';
+import Modal from '../common/Modal';
 
 const projectLinks = [
   'https://yzarytskyi.github.io/finance-crypto/',
@@ -24,6 +25,11 @@ const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
   const [slideChangeClick, setSlideChangeClick] = useState(null);
+  const [modalShowCrypto, setModalShowCrypto] = useState(false);
+  const [modalShowPrestige, setModalShowPrestige] = useState(false);
+  const [modalShowIceCream, setModalShowIceCream] = useState(false);
+
+  const modalsSetState = [setModalShowCrypto, setModalShowPrestige, setModalShowIceCream];
 
   const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
   const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
@@ -91,81 +97,97 @@ const Portfolio = () => {
     setSlideChangeClick(e.target.dataset.index);
   }
 
+  function onClickModalOpen() {
+    modalsSetState[activeIndex](true);
+    document.body.style.overflowY = 'hidden';
+  }
+
   return (
-    <section id="portfolio" className={s.portfolio}>
-      <div className={s.container}>
-        <h2 className={s.title + ' ' + s.titlePortfolio}>Portfolio</h2>
-        <div className={s.presentation}>
-          <div className={s.iMac} ref={refImage}>
-            <div className={s.iMacWrapper} ref={refWrapper}></div>
-            <div className={s.iMacWrapper2}>
-              <img
-                src={desktopImages[prevImgIndex]}
-                className={s.sliderImgPrev + ' ' + s.sliderImg}
-                key={prevImgIndex}
-              />
-
-              <img
-                src={desktopImages[activeIndex]}
-                className={s.sliderImg + ' ' + s.imageLg}
-                key={activeIndex}
-              />
-
-              <img
-                src={desktopImages[nextImgIndex]}
-                className={s.sliderImgNext + ' ' + s.sliderImg}
-                key={nextImgIndex}
-              />
-            </div>
-          </div>
-          <div className={s.iphone}>
-            <div className={s.iphoneWrapper}>
-              <a href={projectLinks[activeIndex]} target="_blank" rel="noopener noreferrer">
+    <>
+      <section id="portfolio" className={s.portfolio}>
+        <div className={s.container}>
+          <h2 className={s.title + ' ' + s.titlePortfolio}>Portfolio</h2>
+          <div className={s.presentation}>
+            <div className={s.iMac} ref={refImage}>
+              <div className={s.iMacWrapper} ref={refWrapper}></div>
+              <div className={s.iMacWrapper2}>
                 <img
-                  src={mobileImages[prevImgIndex]}
-                  className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
+                  src={desktopImages[prevImgIndex]}
+                  className={s.sliderImgPrev + ' ' + s.sliderImg}
                   key={prevImgIndex}
                 />
-
-                <img src={mobileImages[activeIndex]} className={s.mobilePhoto} key={activeIndex} />
-
                 <img
-                  src={mobileImages[nextImgIndex]}
-                  className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
+                  src={desktopImages[activeIndex]}
+                  className={s.sliderImg + ' ' + s.imageLg}
+                  key={activeIndex}
+                />
+                <img
+                  src={desktopImages[nextImgIndex]}
+                  className={s.sliderImgNext + ' ' + s.sliderImg}
                   key={nextImgIndex}
                 />
-              </a>
+              </div>
+            </div>
+            <div className={s.iphone}>
+              <div className={s.iphoneWrapper}>
+                <a href={projectLinks[activeIndex]} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={mobileImages[prevImgIndex]}
+                    className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
+                    key={prevImgIndex}
+                  />
+                  <img
+                    src={mobileImages[activeIndex]}
+                    className={s.mobilePhoto}
+                    key={activeIndex}
+                  />
+                  <img
+                    src={mobileImages[nextImgIndex]}
+                    className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
+                    key={nextImgIndex}
+                  />
+                </a>
+              </div>
+            </div>
+            <div className={s.btnContainer} onClick={() => onClickModalOpen()}>
+              <span className={s.btn__circle}></span>
+              <span className={s.btn__whiteCircle}>
+                <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
+                  <path d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"></path>
+                </svg>
+              </span>
+              <button className={s.btn}>Discover the project</button>
             </div>
           </div>
-          <button href="" className={s.btn}>
-            <span className={s.btn__circle}></span>
-            <span className={s.btn__whiteCircle}>
-              <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
-                <path d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"></path>
-              </svg>
-            </span>
-            <a
-              href={projectLinks[activeIndex]}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={s.btn__text}>
-              Discover the project
-            </a>
-          </button>
+          <ul className={s.projectList} onClick={(e) => onClickSlideChange(e)}>
+            {projectTitles.map((title, i) => (
+              <li className={s.projectItem} key={i}>
+                <button
+                  className={s.projectBtn + ' ' + (i === activeIndex && s.activeProject)}
+                  data-index={i}>
+                  {title}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className={s.projectList} onClick={(e) => onClickSlideChange(e)}>
-          {projectTitles.map((title, i) => (
-            <li className={s.projectItem} key={i}>
-              <button
-                className={s.projectBtn + ' ' + (i === activeIndex && s.activeProject)}
-                data-index={i}>
-                {title}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+      </section>
+      <Modal modalShow={modalShowCrypto} setModalShow={setModalShowCrypto}>
+        <a href={projectLinks[activeIndex]} rel="nofollow noopener noreferrer" target="_blank">
+          Crypto
+        </a>
+      </Modal>
+      <Modal modalShow={modalShowPrestige} setModalShow={setModalShowPrestige}>
+        <a href={projectLinks[activeIndex]} rel="nofollow noopener noreferrer" target="_blank">
+          Prestige
+        </a>
+      </Modal>
+      <Modal modalShow={modalShowIceCream} setModalShow={setModalShowIceCream}>
+        <a href={projectLinks[activeIndex]} rel="nofollow noopener noreferrer" target="_blank">
+          IceCream
+        </a>
+      </Modal>
+    </>
   );
 };
 
