@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.ef431196.css",
-    "main.js": "/portfolio/static/js/main.2aa7e4de.js",
+    "main.css": "/portfolio/static/css/main.de3a62c4.css",
+    "main.js": "/portfolio/static/js/main.0b98d504.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
     "static/media/iceCream2.png": "/portfolio/static/media/iceCream2.e7d6919c66751fd043a8.png",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
@@ -11,13 +11,13 @@
     "static/media/eShop.jpg": "/portfolio/static/media/eShop.60c78312a16fda1b63a8.jpg",
     "static/media/imac.png": "/portfolio/static/media/imac.1e48c1a1aa0511ee2d8e.png",
     "static/media/crypto2.jpg": "/portfolio/static/media/crypto2.20c07232b25b1df78ba5.jpg",
-    "static/media/icons.svg": "/portfolio/static/media/icons.11b2c27c6ef6415679714fef87ddd4d7.svg",
+    "static/media/icons.svg": "/portfolio/static/media/icons.aed1f4ea4245135e4c7a4c848c024b3b.svg",
     "index.html": "/portfolio/index.html",
-    "main.ef431196.css.map": "/portfolio/static/css/main.ef431196.css.map",
-    "main.2aa7e4de.js.map": "/portfolio/static/js/main.2aa7e4de.js.map"
+    "main.de3a62c4.css.map": "/portfolio/static/css/main.de3a62c4.css.map",
+    "main.0b98d504.js.map": "/portfolio/static/js/main.0b98d504.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef431196.css",
-    "static/js/main.2aa7e4de.js"
+    "static/css/main.de3a62c4.css",
+    "static/js/main.0b98d504.js"
   ]
 }
