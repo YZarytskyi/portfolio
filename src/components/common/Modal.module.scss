@@ -45,6 +45,9 @@
   @media (max-width: 767px) {
     width: 70%;
   }
+  @media (max-width: 479px) {
+    padding: 2.5rem 2rem;
+  }
 }
 
 .modalCloseBtn {
