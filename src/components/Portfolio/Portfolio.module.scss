@@ -140,6 +140,7 @@
   width: 66%;
   height: 83.5%;
   border-radius: 2px 2px 22px 22px;
+  cursor: pointer;
   overflow: hidden;
   transform: translateX(-49.8%) rotate(0.35deg);
 }
@@ -334,7 +335,72 @@
   }
 }
 
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.modalLinksContainer {
+  display: flex;
+  gap: 5rem;
+}
+
+.modalTitle {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  &::after {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 300px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: $color-accent;
+
+    @media (max-width: 1199px) {
+      width: 250px;
+    }
+    @media (max-width: 767px) {
+      width: 200px;
+    }
+    @media (max-width: 479px) {
+      width: 150px;
+    }
+  }
+}
+
+.modalText {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.modalToolingList {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  color: #88adff;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+}
+
 .modalProjectLink {
+  min-width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   padding: 0.8rem 1.5rem;
   background-color: transparent;
   border: 1px solid $color-accent;

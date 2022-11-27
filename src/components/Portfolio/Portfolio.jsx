@@ -136,24 +136,18 @@ const Portfolio = () => {
               </div>
             </div>
             <div className={s.iphone}>
-              <div className={s.iphoneWrapper}>
-                <button onClick={() => onClickModalOpen()}>
-                  <img
-                    src={mobileImages[prevImgIndex]}
-                    className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
-                    key={prevImgIndex}
-                  />
-                  <img
-                    src={mobileImages[activeIndex]}
-                    className={s.mobilePhoto}
-                    key={activeIndex}
-                  />
-                  <img
-                    src={mobileImages[nextImgIndex]}
-                    className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
-                    key={nextImgIndex}
-                  />
-                </button>
+              <div className={s.iphoneWrapper} role="button" onClick={() => onClickModalOpen()}>
+                <img
+                  src={mobileImages[prevImgIndex]}
+                  className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
+                  key={prevImgIndex}
+                />
+                <img src={mobileImages[activeIndex]} className={s.mobilePhoto} key={activeIndex} />
+                <img
+                  src={mobileImages[nextImgIndex]}
+                  className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
+                  key={nextImgIndex}
+                />
               </div>
             </div>
             <div className={s.btnContainer} role="button" onClick={() => onClickModalOpen()}>
@@ -183,58 +177,103 @@ const Portfolio = () => {
         modalShow={modalShowCrypto}
         setModalShow={setModalShowCrypto}
         setIsModalOpen={setIsModalOpen}>
-        <a
-          href={projectLinksGit[activeIndex]}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          className={s.modalProjectLink}>
-          GitHub
-        </a>
-        <a
-          href={projectLinksLive[activeIndex]}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          className={s.modalProjectLink}>
-          Live
-        </a>
+        <div className={s.modalContainer}>
+          <h1 className={s.modalTitle}>{projectTitles[0]}</h1>
+          <p className={s.modalText}>
+            <span>Crypto</span> provides crowdsourced and professionally curated research, price analysis, and
+            crypto market-moving news to help market players make more informed trading decisions.
+            If you’re looking for a set of practical and insightful crypto market information and
+            data, we have the analytics tools to suit your business needs.
+          </p>
+          <ul className={s.modalToolingList}>
+            <li>ReactJS</li>
+            <li>Redux Toolkit</li>
+            <li>TypeScript</li>
+            <li>Firebase</li>
+            <li>Binance API</li>
+          </ul>
+          <div className={s.modalLinksContainer}>
+            <a
+              href={projectLinksGit[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              GitHub
+            </a>
+            <a
+              href={projectLinksLive[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              Live
+            </a>
+          </div>
+        </div>
       </Modal>
       <Modal
         modalShow={modalShowPrestige}
         setModalShow={setModalShowPrestige}
         setIsModalOpen={setIsModalOpen}>
-        <a
-          href={projectLinksGit[activeIndex]}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          className={s.modalProjectLink}>
-          GitHub
-        </a>
-        <a
-          href={projectLinksLive[activeIndex]}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          className={s.modalProjectLink}>
-          Live
-        </a>
+        <div className={s.modalContainer}>
+          <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
+          <p className={s.modalText}>
+          At <span>PRESTIGE</span>, all that you see is hand-picked and 100% true – sourced straight from the best brands and their approved affiliates from US and over the world, only for you.
+          </p>
+          <ul className={s.modalToolingList}>
+            <li>ReactJS</li>
+            <li>Redux</li>
+            <li>Bootstrap</li>
+            <li>SASS</li>
+          </ul>
+          <div className={s.modalLinksContainer}>
+            <a
+              href={projectLinksGit[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              GitHub
+            </a>
+            <a
+              href={projectLinksLive[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              Live
+            </a>
+          </div>
+        </div>
       </Modal>
       <Modal
         modalShow={modalShowIceCream}
         setModalShow={setModalShowIceCream}
         setIsModalOpen={setIsModalOpen}>
-        <a
-          href={projectLinksGit[activeIndex]}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          className={s.modalProjectLink}>
-          GitHub
-        </a>
-        <a
-          href={projectLinksLive[activeIndex]}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          className={s.modalProjectLink}>
-          Live
-        </a>
+        <div className={s.modalContainer}>
+          <h1 className={s.modalTitle}>{projectTitles[2]}</h1>
+          <p className={s.modalText}>
+          Selling ice cream online is tricky, but it can be done. With <span>Ice-Cream</span> same-day delivery, pick-up option, and Shopify POS, you can have your ice cream to your customers in no time. It is one of the best option to sell ice cream online.
+          </p>
+          <ul className={s.modalToolingList}>
+            <li>SASS</li>
+            <li>JavaScript</li>
+            <li>Parcel</li>
+          </ul>
+          <div className={s.modalLinksContainer}>
+            <a
+              href={projectLinksGit[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              GitHub
+            </a>
+            <a
+              href={projectLinksLive[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              Live
+            </a>
+          </div>
+        </div>
       </Modal>
     </>
   );

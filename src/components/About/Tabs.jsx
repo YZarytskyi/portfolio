@@ -35,52 +35,68 @@ const Tabs = () => {
         <div className={s.tabContent + ' ' + (tab === 1 && s.tabContentCurrent)}>
           <ul className={s.toolsList}>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-html`}></use>
-              </svg>
-              HTML 5
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-html`}></use>
+                </svg>
+                HTML 5
+              </div>
             </li>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-css`}></use>
-              </svg>
-              CSS3
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-css`}></use>
+                </svg>
+                CSS3
+              </div>
             </li>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-js`}></use>
-              </svg>
-              JavaScript
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-js`}></use>
+                </svg>
+                JavaScript
+              </div>
             </li>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-typescript`}></use>
-              </svg>
-              TypeScript
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-typescript`}></use>
+                </svg>
+                TypeScript
+              </div>
             </li>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-react`}></use>
-              </svg>
-              React
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-react`}></use>
+                </svg>
+                React
+              </div>
             </li>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-redux`}></use>
-              </svg>
-              Redux
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-redux`}></use>
+                </svg>
+                Redux
+              </div>
             </li>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-git`}></use>
-              </svg>
-              Git
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-git`}></use>
+                </svg>
+                Git
+              </div>
             </li>
             <li className={s.toolsItem}>
-              <svg className={s.toolsIcon}>
-                <use href={`${sprite}#icon-sass`}></use>
-              </svg>
-              Sass
+              <div className={s.toolsItemInner}>
+                <svg className={s.toolsIcon}>
+                  <use href={`${sprite}#icon-sass`}></use>
+                </svg>
+                Sass
+              </div>
             </li>
           </ul>
         </div>
@@ -93,10 +109,10 @@ const Tabs = () => {
               Fullstack Bootcamp, GoIt, 2022
             </a>
             Intensive 5-month-long course, with over 400 hours of coding. HTML, CSS, Javascript,
-            React, Node JS, additional coursework on soft skills, teamwork, project management, agile
-            methodologies and technologies, tools like Redux state management library, Firebase
-            Firestore Cloud database, Jest testing framework. Built projects from zero to production
-            level.
+            React, Node JS, additional coursework on soft skills, teamwork, project management,
+            agile methodologies and technologies, tools like Redux state management library,
+            Firebase Firestore Cloud database, Jest testing framework. Built projects from zero to
+            production level.
           </p>
         </div>
       </div>

@@ -36,4 +36,4 @@ const Modal = ({ children, modalShow, setModalShow, setIsModalOpen }) => {
   );
 };
 
-export default React.memo(Modal);
+export default Modal;
