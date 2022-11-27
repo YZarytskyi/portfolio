@@ -9,7 +9,12 @@ import iceCream2 from '../../assets/iceCream2.png';
 import { useEffect } from 'react';
 import Modal from '../common/Modal';
 
-const projectLinks = [
+const projectLinksGit = [
+  'https://github.com/YZarytskyi/finance-crypto',
+  'https://github.com/YZarytskyi/e-shop',
+  'https://github.com/YZarytskyi/ice-cream-team-project'
+];
+const projectLinksLive = [
   'https://yzarytskyi.github.io/finance-crypto/',
   'https://yzarytskyi.github.io/e-shop/',
   'https://yzarytskyi.github.io/ice-cream-team-project/'
@@ -25,6 +30,7 @@ const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
   const [slideChangeClick, setSlideChangeClick] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalShowCrypto, setModalShowCrypto] = useState(false);
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
   const [modalShowIceCream, setModalShowIceCream] = useState(false);
@@ -49,7 +55,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     let interval;
-    if (isImgHovered || slideChangeClick) {
+    if (isImgHovered || slideChangeClick || isModalOpen) {
       clearInterval(interval);
       if (slideChangeClick) {
         setActiveIndex(Number(slideChangeClick));
@@ -64,7 +70,7 @@ const Portfolio = () => {
       }, 7000);
     }
     return () => clearInterval(interval);
-  }, [isImgHovered, slideChangeClick]);
+  }, [isImgHovered, slideChangeClick, isModalOpen]);
 
   useEffect(() => {
     const wrapper = refWrapper.current;
@@ -99,6 +105,7 @@ const Portfolio = () => {
 
   function onClickModalOpen() {
     modalsSetState[activeIndex](true);
+    setIsModalOpen(true);
     document.body.style.overflowY = 'hidden';
   }
 
@@ -130,7 +137,7 @@ const Portfolio = () => {
             </div>
             <div className={s.iphone}>
               <div className={s.iphoneWrapper}>
-                <a href={projectLinks[activeIndex]} target="_blank" rel="noopener noreferrer">
+                <button onClick={() => onClickModalOpen()}>
                   <img
                     src={mobileImages[prevImgIndex]}
                     className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
@@ -146,10 +153,10 @@ const Portfolio = () => {
                     className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
                     key={nextImgIndex}
                   />
-                </a>
+                </button>
               </div>
             </div>
-            <div className={s.btnContainer} onClick={() => onClickModalOpen()}>
+            <div className={s.btnContainer} role="button" onClick={() => onClickModalOpen()}>
               <span className={s.btn__circle}></span>
               <span className={s.btn__whiteCircle}>
                 <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
@@ -172,19 +179,61 @@ const Portfolio = () => {
           </ul>
         </div>
       </section>
-      <Modal modalShow={modalShowCrypto} setModalShow={setModalShowCrypto}>
-        <a href={projectLinks[activeIndex]} rel="nofollow noopener noreferrer" target="_blank">
-          Crypto
+      <Modal
+        modalShow={modalShowCrypto}
+        setModalShow={setModalShowCrypto}
+        setIsModalOpen={setIsModalOpen}>
+        <a
+          href={projectLinksGit[activeIndex]}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          className={s.modalProjectLink}>
+          GitHub
+        </a>
+        <a
+          href={projectLinksLive[activeIndex]}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          className={s.modalProjectLink}>
+          Live
         </a>
       </Modal>
-      <Modal modalShow={modalShowPrestige} setModalShow={setModalShowPrestige}>
-        <a href={projectLinks[activeIndex]} rel="nofollow noopener noreferrer" target="_blank">
-          Prestige
+      <Modal
+        modalShow={modalShowPrestige}
+        setModalShow={setModalShowPrestige}
+        setIsModalOpen={setIsModalOpen}>
+        <a
+          href={projectLinksGit[activeIndex]}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          className={s.modalProjectLink}>
+          GitHub
+        </a>
+        <a
+          href={projectLinksLive[activeIndex]}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          className={s.modalProjectLink}>
+          Live
         </a>
       </Modal>
-      <Modal modalShow={modalShowIceCream} setModalShow={setModalShowIceCream}>
-        <a href={projectLinks[activeIndex]} rel="nofollow noopener noreferrer" target="_blank">
-          IceCream
+      <Modal
+        modalShow={modalShowIceCream}
+        setModalShow={setModalShowIceCream}
+        setIsModalOpen={setIsModalOpen}>
+        <a
+          href={projectLinksGit[activeIndex]}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          className={s.modalProjectLink}>
+          GitHub
+        </a>
+        <a
+          href={projectLinksLive[activeIndex]}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          className={s.modalProjectLink}>
+          Live
         </a>
       </Modal>
     </>

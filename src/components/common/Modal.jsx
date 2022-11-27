@@ -2,7 +2,7 @@ import s from "./Modal.module.scss";
 import React, { useRef } from "react";
 import sprite from "../../assets/icons.svg";
 
-const Modal = ({ children, modalShow, setModalShow }) => {
+const Modal = ({ children, modalShow, setModalShow, setIsModalOpen }) => {
   const backdropRef = useRef(null);
 
   const handleCloseModal = (e) => {
@@ -13,6 +13,7 @@ const Modal = ({ children, modalShow, setModalShow }) => {
       target.nodeName === "use"
     ) {
       setModalShow(false);
+      setIsModalOpen(false);
       document.body.style.overflowY = 'scroll';
     }
   };

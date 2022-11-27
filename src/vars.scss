@@ -17,6 +17,20 @@ $input-shadow: $color-accent 0px 0px 6px 0.5px;
   overflow: hidden;
 }
 
+.tilt {
+  display: block;
+  @media (max-width: 1019px) {
+    display: none;
+  }
+}
+
+.tiltMobile {
+  display: none;
+  @media (max-width: 1019px) {
+    display: block;
+  }
+}
+
 .title {
   padding: 0 0 2rem 0;
   cursor: default;

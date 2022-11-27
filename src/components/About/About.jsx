@@ -8,14 +8,21 @@ const About = () => {
   return (
     <section id="about" className={s.about}>
       <div className={s.container}>
+
         <Tilt
           tiltMaxAngleX={20}
           tiltMaxAngleY={11}
           tiltReverse={true}
           scale={1.1}
-          transitionSpeed={3000}>
+          transitionSpeed={3000}
+          className={s.tilt}>
           <h2 className={s.title}>About Me</h2>
         </Tilt>
+
+        <div className={s.tiltMobile}>
+          <h2 className={s.title}>About Me</h2>
+        </div>
+
         <div className={s.textImgContainer}>
           <p className={s.text}>
             All of my knowledge has been gained with hundreds hours of learning and practice within

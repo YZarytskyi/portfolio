@@ -186,10 +186,10 @@
     left: -28%;
   }
   @media (max-width: 1199px) {
-    left: -70%;
+    left: -60%;
     font-size: 1.5rem;
   }
-  @media (max-width: 980px) {
+  @media (max-width: 930px) {
     display: none;
   }
 
@@ -251,10 +251,6 @@
     background-color: transparent;
     font-size: inherit;
     transition: 0.3s linear;
-
-    @media (max-width: 1199px) {
-    padding: 22px 6px;
-    }
   }
 
   &:hover, &:focus {
@@ -335,5 +331,25 @@
 .activeProject {
   &::after {
     transform: scale(1);
+  }
+}
+
+.modalProjectLink {
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid $color-accent;
+  border-radius: 4px;
+  font-size: 1.6rem;
+
+  @media (max-width: 767px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 400px) {
+    padding: 0.5rem 1.6rem;
+  }
+
+  &:hover {
+    color: $color-main;
+    animation: glow 1s infinite;
   }
 }
