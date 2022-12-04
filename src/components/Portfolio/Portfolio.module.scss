@@ -339,11 +339,22 @@
   align-items: center;
   font-size: 1.8rem;
   line-height: 1.4;
+  @media (max-width: 1199px) {
+    font-size: 1.6rem;
+    line-height: 1.35;
+  }
+  @media (max-width: 479px) {
+    font-size: 1.3rem;
+    line-height: 1.45;
+  }
 }
 
 .modalLinksContainer {
   display: flex;
-  gap: 5rem;
+  gap: 4rem;
+  @media (max-width: 1199px) {
+    gap: 3rem;
+  }
 }
 
 .modalTitle {
@@ -355,6 +366,10 @@
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 600;
+  @media (max-width: 479px) {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
   &::after {
     position: relative;
     bottom: 0;
@@ -381,16 +396,25 @@
 .modalText {
   margin-bottom: 3rem;
   text-align: center;
+  > span {
+    color: $color-accent; 
+  }
 }
 
 .modalToolingList {
   margin-bottom: 4rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  column-gap: 2rem;
+  row-gap: 1.2rem;
   color: #88adff;
   font-size: 1.5rem;
   letter-spacing: 0.06em;
+  @media (max-width: 479px) {
+    margin-bottom: 3rem;
+    column-gap: 1.3rem;
+    font-size: 1.3rem;
+  }
 }
 
 .modalProjectLink {
@@ -408,7 +432,7 @@
   @media (max-width: 767px) {
     font-size: 1.4rem;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 479px) {
     padding: 0.5rem 1.6rem;
   }
 
