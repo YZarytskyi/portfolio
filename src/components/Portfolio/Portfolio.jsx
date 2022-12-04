@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import s from './Portfolio.module.scss';
 import crypto1 from '../../assets/crypto1.jpg';
 import crypto2 from '../../assets/crypto2.jpg';
+import filmoteka from '../../assets/filmoteka.png';
+import filmoteka2 from '../../assets/filmoteka2.jpg';
 import eShop from '../../assets/eShop.jpg';
 import eShop2 from '../../assets/eshop2.png';
 import iceCream from '../../assets/iceCream.jpg';
@@ -11,17 +13,19 @@ import Modal from '../common/Modal';
 
 const projectLinksGit = [
   'https://github.com/YZarytskyi/finance-crypto',
+  'https://github.com/YZarytskyi/filmoteka',
   'https://github.com/YZarytskyi/e-shop',
   'https://github.com/YZarytskyi/ice-cream-team-project'
 ];
 const projectLinksLive = [
   'https://yzarytskyi.github.io/finance-crypto/',
+  'https://yzarytskyi.github.io/filmoteka/',
   'https://yzarytskyi.github.io/e-shop/',
   'https://yzarytskyi.github.io/ice-cream-team-project/'
 ];
-const desktopImages = [crypto1, eShop, iceCream];
-const mobileImages = [crypto2, eShop2, iceCream2];
-const projectTitles = ['Crypto', 'Prestige', 'Ice-cream'];
+const desktopImages = [crypto1, filmoteka, eShop, iceCream];
+const mobileImages = [crypto2, filmoteka2, eShop2, iceCream2];
+const projectTitles = ['Crypto', 'Filmoteka' , 'Prestige', 'Ice-cream'];
 
 const Portfolio = () => {
   const refWrapper = useRef(null);
@@ -32,10 +36,11 @@ const Portfolio = () => {
   const [slideChangeClick, setSlideChangeClick] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalShowCrypto, setModalShowCrypto] = useState(false);
+  const [modalShowFilmoteka, setModalShowFilmoteka] = useState(false);
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
   const [modalShowIceCream, setModalShowIceCream] = useState(false);
 
-  const modalsSetState = [setModalShowCrypto, setModalShowPrestige, setModalShowIceCream];
+  const modalsSetState = [setModalShowCrypto, setModalShowFilmoteka, setModalShowPrestige, setModalShowIceCream];
 
   const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
   const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
@@ -211,13 +216,46 @@ const Portfolio = () => {
         </div>
       </Modal>
       <Modal
+        modalShow={modalShowFilmoteka}
+        setModalShow={setModalShowFilmoteka}
+        setIsModalOpen={setIsModalOpen}>
+        <div className={s.modalContainer}>
+          <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
+          <p className={s.modalText}>
+          <span>Filmoteka</span> is a comprehensive and in-depth resource for finding out more about the movies you love.
+          On <span>Filmoteka</span> you will find: information about your favorite movies, new movies in theaters, list of Top available movies, its rating. By creating an account with us, you will have the opportunity adding to &quot;Queue&quot; or &quot;Watched&quot;  your favorite movies.
+          </p>
+          <ul className={s.modalToolingList}>
+            <li>Vanilla JS</li>
+            <li>Firebase</li>
+            <li>SASS</li>
+          </ul>
+          <div className={s.modalLinksContainer}>
+            <a
+              href={projectLinksGit[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              GitHub
+            </a>
+            <a
+              href={projectLinksLive[activeIndex]}
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              className={s.modalProjectLink}>
+              Live
+            </a>
+          </div>
+        </div>
+      </Modal>
+      <Modal
         modalShow={modalShowPrestige}
         setModalShow={setModalShowPrestige}
         setIsModalOpen={setIsModalOpen}>
         <div className={s.modalContainer}>
           <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
           <p className={s.modalText}>
-          At <span>PRESTIGE</span>, all that you see is hand-picked and 100% true – sourced straight from the best brands and their approved affiliates from US and over the world, only for you.
+          At <span>PRESTIGE</span> all that you see is hand-picked and 100% true – sourced straight from the best brands and their approved affiliates from US and over the world, only for you.
           </p>
           <ul className={s.modalToolingList}>
             <li>ReactJS</li>
