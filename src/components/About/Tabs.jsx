@@ -47,7 +47,7 @@ const Tabs = () => {
                 <svg className={s.toolsIcon}>
                   <use href={`${sprite}#icon-css`}></use>
                 </svg>
-                CSS3
+                CSS 3
               </div>
             </li>
             <li className={s.toolsItem}>

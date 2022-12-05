@@ -14,7 +14,7 @@ const Modal = ({ children, modalShow, setModalShow, setIsModalOpen }) => {
     ) {
       setModalShow(false);
       setIsModalOpen(false);
-      document.body.style.overflowY = 'scroll';
+      document.body.classList.remove('body-overflow');
     }
   };
 

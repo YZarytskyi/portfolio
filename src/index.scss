@@ -25,11 +25,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.body-overflow {
+  overflow: hidden;
+  margin-right: 8px;
+
+  @media screen and (max-width: 767px) {
+    margin-right: 0;
+  }
+  
+  & .FixContacts_fixEmail__ZxL4J {
+    right: calc(5% + 8px);
+  }
+
+  & .Header_headerContainer__GTRXA {
+    padding-right: 8px;
+    width: calc(90% - 8px);
+    @media screen and (max-width: 767px) {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}
+
 ::-webkit-scrollbar {
   width: 8px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 ::-webkit-scrollbar-track {
-  background: radial-gradient(ellipse at bottom, #0e2641 0%, #090A0F 100%);
+  background: #080d16;
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgb(61, 59, 82);

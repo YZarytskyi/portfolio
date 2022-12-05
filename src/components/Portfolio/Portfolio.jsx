@@ -9,23 +9,11 @@ import eShop2 from '../../assets/eshop2.png';
 import iceCream from '../../assets/iceCream.jpg';
 import iceCream2 from '../../assets/iceCream2.png';
 import { useEffect } from 'react';
-import Modal from '../common/Modal';
+import Modals from './Modals/Modals';
 
-const projectLinksGit = [
-  'https://github.com/YZarytskyi/finance-crypto',
-  'https://github.com/YZarytskyi/filmoteka',
-  'https://github.com/YZarytskyi/e-shop',
-  'https://github.com/YZarytskyi/ice-cream-team-project'
-];
-const projectLinksLive = [
-  'https://yzarytskyi.github.io/finance-crypto/',
-  'https://yzarytskyi.github.io/filmoteka/',
-  'https://yzarytskyi.github.io/e-shop/',
-  'https://yzarytskyi.github.io/ice-cream-team-project/'
-];
 const desktopImages = [crypto1, filmoteka, eShop, iceCream];
 const mobileImages = [crypto2, filmoteka2, eShop2, iceCream2];
-const projectTitles = ['Crypto', 'Filmoteka' , 'Prestige', 'Ice-cream'];
+const projectTitles = ['Crypto', 'Filmoteka', 'Prestige', 'Ice-cream'];
 
 const Portfolio = () => {
   const refWrapper = useRef(null);
@@ -40,7 +28,12 @@ const Portfolio = () => {
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
   const [modalShowIceCream, setModalShowIceCream] = useState(false);
 
-  const modalsSetState = [setModalShowCrypto, setModalShowFilmoteka, setModalShowPrestige, setModalShowIceCream];
+  const modalsSetState = [
+    setModalShowCrypto,
+    setModalShowFilmoteka,
+    setModalShowPrestige,
+    setModalShowIceCream
+  ];
 
   const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
   const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
@@ -111,7 +104,7 @@ const Portfolio = () => {
   function onClickModalOpen() {
     modalsSetState[activeIndex](true);
     setIsModalOpen(true);
-    document.body.style.overflowY = 'hidden';
+    document.body.classList.add('body-overflow');
   }
 
   return (
@@ -178,141 +171,19 @@ const Portfolio = () => {
           </ul>
         </div>
       </section>
-      <Modal
-        modalShow={modalShowCrypto}
-        setModalShow={setModalShowCrypto}
-        setIsModalOpen={setIsModalOpen}>
-        <div className={s.modalContainer}>
-          <h1 className={s.modalTitle}>{projectTitles[0]}</h1>
-          <p className={s.modalText}>
-            <span>Crypto</span> provides crowdsourced and professionally curated research, price analysis, and
-            crypto market-moving news to help market players make more informed trading decisions.
-            If you’re looking for a set of practical and insightful crypto market information and
-            data, we have the analytics tools to suit your business needs.
-          </p>
-          <ul className={s.modalToolingList}>
-            <li>ReactJS</li>
-            <li>Redux Toolkit</li>
-            <li>TypeScript</li>
-            <li>Firebase</li>
-            <li>Binance API</li>
-          </ul>
-          <div className={s.modalLinksContainer}>
-            <a
-              href={projectLinksGit[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              GitHub
-            </a>
-            <a
-              href={projectLinksLive[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              Live
-            </a>
-          </div>
-        </div>
-      </Modal>
-      <Modal
-        modalShow={modalShowFilmoteka}
-        setModalShow={setModalShowFilmoteka}
-        setIsModalOpen={setIsModalOpen}>
-        <div className={s.modalContainer}>
-          <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
-          <p className={s.modalText}>
-          <span>Filmoteka</span> is a comprehensive and in-depth resource for finding out more about the movies you love.
-          On <span>Filmoteka</span> you will find: information about your favorite movies, new movies in theaters, list of Top available movies, its rating. By creating an account with us, you will have the opportunity adding to &quot;Queue&quot; or &quot;Watched&quot;  your favorite movies.
-          </p>
-          <ul className={s.modalToolingList}>
-            <li>Vanilla JS</li>
-            <li>Firebase</li>
-            <li>SASS</li>
-          </ul>
-          <div className={s.modalLinksContainer}>
-            <a
-              href={projectLinksGit[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              GitHub
-            </a>
-            <a
-              href={projectLinksLive[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              Live
-            </a>
-          </div>
-        </div>
-      </Modal>
-      <Modal
-        modalShow={modalShowPrestige}
-        setModalShow={setModalShowPrestige}
-        setIsModalOpen={setIsModalOpen}>
-        <div className={s.modalContainer}>
-          <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
-          <p className={s.modalText}>
-          At <span>PRESTIGE</span> all that you see is hand-picked and 100% true – sourced straight from the best brands and their approved affiliates from US and over the world, only for you.
-          </p>
-          <ul className={s.modalToolingList}>
-            <li>ReactJS</li>
-            <li>Redux</li>
-            <li>Bootstrap</li>
-            <li>SASS</li>
-          </ul>
-          <div className={s.modalLinksContainer}>
-            <a
-              href={projectLinksGit[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              GitHub
-            </a>
-            <a
-              href={projectLinksLive[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              Live
-            </a>
-          </div>
-        </div>
-      </Modal>
-      <Modal
-        modalShow={modalShowIceCream}
-        setModalShow={setModalShowIceCream}
-        setIsModalOpen={setIsModalOpen}>
-        <div className={s.modalContainer}>
-          <h1 className={s.modalTitle}>{projectTitles[2]}</h1>
-          <p className={s.modalText}>
-          Selling ice cream online is tricky, but it can be done. With <span>Ice-Cream</span> same-day delivery, pick-up option, and Shopify POS, you can have your ice cream to your customers in no time. It is one of the best option to sell ice cream online.
-          </p>
-          <ul className={s.modalToolingList}>
-            <li>SASS</li>
-            <li>JavaScript</li>
-            <li>Parcel</li>
-          </ul>
-          <div className={s.modalLinksContainer}>
-            <a
-              href={projectLinksGit[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              GitHub
-            </a>
-            <a
-              href={projectLinksLive[activeIndex]}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className={s.modalProjectLink}>
-              Live
-            </a>
-          </div>
-        </div>
-      </Modal>
+      <Modals
+        activeIndex={activeIndex}
+        setIsModalOpen={setIsModalOpen}
+        projectTitles={projectTitles}
+        modalShowCrypto={modalShowCrypto}
+        setModalShowCrypto={setModalShowCrypto}
+        modalShowFilmoteka={modalShowFilmoteka}
+        setModalShowFilmoteka={setModalShowFilmoteka}
+        modalShowPrestige={modalShowPrestige}
+        setModalShowPrestige={setModalShowPrestige}
+        modalShowIceCream={modalShowIceCream}
+        setModalShowIceCream={setModalShowIceCream}
+      />
     </>
   );
 };
