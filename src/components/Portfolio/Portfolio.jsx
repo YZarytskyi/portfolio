@@ -10,6 +10,7 @@ import iceCream from '../../assets/iceCream.jpg';
 import iceCream2 from '../../assets/iceCream2.png';
 import { useEffect } from 'react';
 import Modals from './Modals/Modals';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const desktopImages = [crypto1, filmoteka, eShop, iceCream];
 const mobileImages = [crypto2, filmoteka2, eShop2, iceCream2];
@@ -27,6 +28,8 @@ const Portfolio = () => {
   const [modalShowFilmoteka, setModalShowFilmoteka] = useState(false);
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
   const [modalShowIceCream, setModalShowIceCream] = useState(false);
+
+  const swiper = document.getElementsByClassName('swiper')[0]?.swiper;
 
   const modalsSetState = [
     setModalShowCrypto,
@@ -53,19 +56,21 @@ const Portfolio = () => {
 
   useEffect(() => {
     let interval;
-    if (isImgHovered || slideChangeClick || isModalOpen) {
-      clearInterval(interval);
-      if (slideChangeClick) {
-        setActiveIndex(Number(slideChangeClick));
-        setSlideChangeClick(null);
+    if (window.innerWidth >= 1200) {
+      if (isImgHovered || slideChangeClick || isModalOpen) {
+        clearInterval(interval);
+        if (slideChangeClick) {
+          setActiveIndex(Number(slideChangeClick));
+          setSlideChangeClick(null);
+        }
+      } else {
+        interval = setInterval(() => {
+          setActiveIndex((currentIndex) => {
+            const nextIndex = currentIndex === desktopImages.length - 1 ? 0 : currentIndex + 1;
+            return nextIndex;
+          });
+        }, 7000);
       }
-    } else {
-      interval = setInterval(() => {
-        setActiveIndex((currentIndex) => {
-          const nextIndex = currentIndex === desktopImages.length - 1 ? 0 : currentIndex + 1;
-          return nextIndex;
-        });
-      }, 7000);
     }
     return () => clearInterval(interval);
   }, [isImgHovered, slideChangeClick, isModalOpen]);
@@ -99,6 +104,11 @@ const Portfolio = () => {
 
   function onClickSlideChange(e) {
     setSlideChangeClick(e.target.dataset.index);
+    if (window.innerWidth < 1200) {
+      setActiveIndex(Number(e.target.dataset.index));
+      swiper?.slideToLoop(Number(e.target.dataset.index), 500);
+      setSlideChangeClick(null);
+    }
   }
 
   function onClickModalOpen() {
@@ -148,6 +158,28 @@ const Portfolio = () => {
                 />
               </div>
             </div>
+
+            <div className={s.swiper}>
+              <Swiper
+                className={s.swiperWrapper}
+                spaceBetween={0}
+                slidesPerView={1}
+                loop={true}
+                loopAdditionalSlides={3}
+                longSwipes={false}
+                onSlideChange={(e) => setActiveIndex(e.realIndex)}
+                role="button" 
+                onClick={() => onClickModalOpen()}>
+                {mobileImages.map((element) => {
+                  return (
+                    <SwiperSlide key={element}>
+                      <img src={element} className={s.swiperImg} />
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+
             <div className={s.btnContainer} role="button" onClick={() => onClickModalOpen()}>
               <span className={s.btn__circle}></span>
               <span className={s.btn__whiteCircle}>
