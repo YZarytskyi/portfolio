@@ -107,15 +107,19 @@ const Tabs = () => {
               href="https://goit.global/ua/courses/bootcamp/"
               target="_blank"
               rel="noopener noreferrer nofollow">
-              Fullstack Bootcamp, GoIT
+              Fullstack Bootcamp
               <img src={goIt} alt="GoIt school logo" className={s.goItLogo} />
-              2022
+              | 2022
             </a>
             <a
               href="https://it-generation.gov.ua"
               target="_blank"
-              rel="noopener noreferrer nofollow">
-              Member of the IT Generation project
+              rel="noopener noreferrer nofollow"
+              className={s.itGenerationLink}>
+              Member of the
+              <svg className={s.itGenerationLogo}>
+                <use href={`${sprite}#itGeneration`}></use>
+              </svg>
             </a>
             Intensive 5-month-long course, with over 400 hours of coding. HTML, CSS, Javascript,
             React, Node JS, additional coursework on soft skills, teamwork, project management,
