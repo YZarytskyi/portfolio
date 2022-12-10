@@ -1,24 +1,24 @@
 import React, { useRef, useState } from 'react';
 import s from './Portfolio.module.scss';
 import crypto1 from '../../assets/crypto1.jpg';
-import crypto2 from '../../assets/crypto2.jpg';
+import crypto2 from '../../assets/crypto2.png';
 import filmoteka from '../../assets/filmoteka.png';
-import filmoteka2 from '../../assets/filmoteka2.jpg';
+import filmoteka2 from '../../assets/filmoteka2.png';
 import eShop from '../../assets/eShop.jpg';
 import eShop2 from '../../assets/eshop2.png';
 import iceCream from '../../assets/iceCream.jpg';
 import iceCream2 from '../../assets/iceCream2.png';
 import { useEffect } from 'react';
 import Modals from './Modals/Modals';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import MobileSwiper from './MobileSwiper';
 
 const desktopImages = [crypto1, filmoteka, eShop, iceCream];
 const mobileImages = [crypto2, filmoteka2, eShop2, iceCream2];
 const projectTitles = ['Crypto', 'Filmoteka', 'Prestige', 'Ice-cream'];
 
 const Portfolio = () => {
-  const refWrapper = useRef(null);
-  const refImage = useRef(null);
+  const DESKTOP = 'desktop'
+  const MOBILE = 'mobile'
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
@@ -28,8 +28,10 @@ const Portfolio = () => {
   const [modalShowFilmoteka, setModalShowFilmoteka] = useState(false);
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
   const [modalShowIceCream, setModalShowIceCream] = useState(false);
-
-  const swiper = document.getElementsByClassName('swiper')[0]?.swiper;
+  const [device, setDevice] = useState(null)
+  
+  const refWrapper = useRef(null);
+  const refImage = useRef(null);
 
   const modalsSetState = [
     setModalShowCrypto,
@@ -37,9 +39,19 @@ const Portfolio = () => {
     setModalShowPrestige,
     setModalShowIceCream
   ];
-
+  
   const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
   const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
+
+  useEffect(() => {
+    const handleResize = () => setDevice(window.innerWidth >= 1200 ? DESKTOP : MOBILE)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   useEffect(() => {
     const mouseover = () => setIsImgHovered(true);
@@ -56,14 +68,12 @@ const Portfolio = () => {
 
   useEffect(() => {
     let interval;
-    if (window.innerWidth >= 1200) {
-      if (isImgHovered || slideChangeClick || isModalOpen) {
-        clearInterval(interval);
+    if (device === DESKTOP) {
         if (slideChangeClick) {
           setActiveIndex(Number(slideChangeClick));
           setSlideChangeClick(null);
         }
-      } else {
+      if (!isImgHovered && !slideChangeClick && !isModalOpen) {
         interval = setInterval(() => {
           setActiveIndex((currentIndex) => {
             const nextIndex = currentIndex === desktopImages.length - 1 ? 0 : currentIndex + 1;
@@ -73,7 +83,13 @@ const Portfolio = () => {
       }
     }
     return () => clearInterval(interval);
-  }, [isImgHovered, slideChangeClick, isModalOpen]);
+  }, [isImgHovered, slideChangeClick, isModalOpen, device]);
+
+  useEffect(() => {
+    if (device === MOBILE) {
+      setActiveIndex(0);
+    }
+  }, [device])
 
   useEffect(() => {
     const wrapper = refWrapper.current;
@@ -103,10 +119,12 @@ const Portfolio = () => {
   }, []);
 
   function onClickSlideChange(e) {
-    setSlideChangeClick(e.target.dataset.index);
-    if (window.innerWidth < 1200) {
-      setActiveIndex(Number(e.target.dataset.index));
-      swiper?.slideToLoop(Number(e.target.dataset.index), 500);
+    const targetIndex = e.target.dataset.index
+    setSlideChangeClick(targetIndex);
+    if (device === MOBILE) {
+      const swiper = document.querySelector('.swiper').swiper;
+      swiper?.slideToLoop(Number(targetIndex), 500);
+      setActiveIndex(Number(targetIndex));
       setSlideChangeClick(null);
     }
   }
@@ -159,26 +177,13 @@ const Portfolio = () => {
               </div>
             </div>
 
-            <div className={s.swiper}>
-              <Swiper
-                className={s.swiperWrapper}
-                spaceBetween={0}
-                slidesPerView={1}
-                loop={true}
-                loopAdditionalSlides={3}
-                longSwipes={false}
-                onSlideChange={(e) => setActiveIndex(e.realIndex)}
-                role="button" 
-                onClick={() => onClickModalOpen()}>
-                {mobileImages.map((element) => {
-                  return (
-                    <SwiperSlide key={element}>
-                      <img src={element} className={s.swiperImg} />
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
-            </div>
+            <MobileSwiper
+              setActiveIndex={setActiveIndex}
+              onClickModalOpen={onClickModalOpen}
+              mobileImages={mobileImages}
+              device={device}
+              MOBILE={MOBILE}
+            />
 
             <div className={s.btnContainer} role="button" onClick={() => onClickModalOpen()}>
               <span className={s.btn__circle}></span>
