@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import s from './About.module.scss';
 import sprite from '../../assets/icons.svg';
+import goIt from '../../assets/goIt.png';
 
 const Tabs = () => {
   const [tab, setTab] = useState(1);
@@ -106,7 +107,15 @@ const Tabs = () => {
               href="https://goit.global/ua/courses/bootcamp/"
               target="_blank"
               rel="noopener noreferrer nofollow">
-              Fullstack Bootcamp, GoIt, 2022
+              Fullstack Bootcamp, GoIT
+              <img src={goIt} alt="GoIt school logo" className={s.goItLogo} />
+              2022
+            </a>
+            <a
+              href="https://it-generation.gov.ua"
+              target="_blank"
+              rel="noopener noreferrer nofollow">
+              Member of the IT Generation project
             </a>
             Intensive 5-month-long course, with over 400 hours of coding. HTML, CSS, Javascript,
             React, Node JS, additional coursework on soft skills, teamwork, project management,

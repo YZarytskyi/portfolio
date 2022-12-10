@@ -355,11 +355,22 @@
   }
 
   > a {
-    display: block;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 0.8rem;
     width: fit-content;
     margin-bottom: 0.5rem;
-    font-size: 1.1em;
+    font-size: 1.4em;
     font-weight: 700;
     color: $color-accent;
   }
+}
+
+.goItLogo {
+  width: 3.5em;
+  margin-top: 0.1rem;
+  display: inline;
+  background: linear-gradient(to right, $color-main 43%, transparent 43% 58%, $color-main 58%);
+  filter: drop-shadow(0 0 0.7px $color-accent);
 }
