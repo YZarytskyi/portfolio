@@ -8,13 +8,8 @@ const Header = () => {
 
   const onClickOpenMenu = () => {
     if (innerWidth < 768) {
-      if (isOpen) {
-        document.body.style.overflowY = 'scroll';
-        setIsOpen(false);
-        return;
-      }
-      document.body.style.overflowY = 'hidden';
-      setIsOpen(true);
+      document.body.classList.toggle('body-overflow');
+      setIsOpen((prev) => !prev);
     }
   };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import SocialLinks from "../FixContacts/SocialLinks";
 import s from "./Footer.module.scss";
 
 const Footer = () => {
@@ -17,6 +18,7 @@ const Footer = () => {
       <a href="#contact" className={s.link} >CONTACT</a>
     </li>
   </ul>
+  <SocialLinks />
   <p className={s.copyright}>&copy; 2022 Yurii Zarytskyi. All Rights Reserved</p>
   </footer>;
 };

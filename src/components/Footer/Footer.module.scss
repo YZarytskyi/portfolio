@@ -32,17 +32,18 @@
 
   @media (max-width: 1199px) {
     gap: 5rem;
-    padding-bottom: 5rem;
     font-size: 1.8rem;
   }
   @media (max-width: 767px) {
     width: 100%;
     gap: 4rem;
+    margin-bottom: 4rem;
+    padding-bottom: 0;
     font-size: 1.6rem;
+    box-shadow: none;
   }
   @media (max-width: 479px) {
     gap: 1.8rem;
-    padding-bottom: 4rem;
     font-size: 1.5rem;
   }
   @media (max-width: 380px) {
