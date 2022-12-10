@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0e59b3d0.css",
-    "main.js": "/portfolio/static/js/main.f7893b3b.js",
+    "main.css": "/portfolio/static/css/main.b331d8af.css",
+    "main.js": "/portfolio/static/js/main.35e9b0b5.js",
     "static/media/filmoteka.png": "/portfolio/static/media/filmoteka.145ff3809acc0823a7b2.png",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
     "static/media/filmoteka2.png": "/portfolio/static/media/filmoteka2.a836718a16cd5a0ae133.png",
@@ -13,13 +13,14 @@
     "static/media/eShop.jpg": "/portfolio/static/media/eShop.60c78312a16fda1b63a8.jpg",
     "static/media/eshop2.png": "/portfolio/static/media/eshop2.a0a11f6752e93192a6e4.png",
     "static/media/imac.png": "/portfolio/static/media/imac.1e48c1a1aa0511ee2d8e.png",
+    "static/media/goIt.png": "/portfolio/static/media/goIt.ef35b3e5ece670146d7d.png",
     "static/media/icons.svg": "/portfolio/static/media/icons.aed1f4ea4245135e4c7a4c848c024b3b.svg",
     "index.html": "/portfolio/index.html",
-    "main.0e59b3d0.css.map": "/portfolio/static/css/main.0e59b3d0.css.map",
-    "main.f7893b3b.js.map": "/portfolio/static/js/main.f7893b3b.js.map"
+    "main.b331d8af.css.map": "/portfolio/static/css/main.b331d8af.css.map",
+    "main.35e9b0b5.js.map": "/portfolio/static/js/main.35e9b0b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e59b3d0.css",
-    "static/js/main.f7893b3b.js"
+    "static/css/main.b331d8af.css",
+    "static/js/main.35e9b0b5.js"
   ]
 }
