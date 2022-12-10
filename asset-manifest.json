@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.105db0d5.css",
-    "main.js": "/portfolio/static/js/main.eb07bd83.js",
+    "main.css": "/portfolio/static/css/main.d98ebe5a.css",
+    "main.js": "/portfolio/static/js/main.f7893b3b.js",
     "static/media/filmoteka.png": "/portfolio/static/media/filmoteka.145ff3809acc0823a7b2.png",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
-    "static/media/filmoteka2.jpg": "/portfolio/static/media/filmoteka2.8b7e076d43f7c69a798c.jpg",
-    "static/media/iceCream2.png": "/portfolio/static/media/iceCream2.e7d6919c66751fd043a8.png",
+    "static/media/filmoteka2.png": "/portfolio/static/media/filmoteka2.a836718a16cd5a0ae133.png",
+    "static/media/crypto2.png": "/portfolio/static/media/crypto2.3f645e76054865ecad16.png",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
+    "static/media/iceCream2.png": "/portfolio/static/media/iceCream2.0558022f84ffd886a091.png",
     "static/media/crypto1.jpg": "/portfolio/static/media/crypto1.967edd3691ec7b6b72c9.jpg",
-    "static/media/eshop2.png": "/portfolio/static/media/eshop2.036c81fbdce89d6e541d.png",
     "static/media/iceCream.jpg": "/portfolio/static/media/iceCream.288b38bad6d59c461ba8.jpg",
     "static/media/eShop.jpg": "/portfolio/static/media/eShop.60c78312a16fda1b63a8.jpg",
+    "static/media/eshop2.png": "/portfolio/static/media/eshop2.a0a11f6752e93192a6e4.png",
     "static/media/imac.png": "/portfolio/static/media/imac.1e48c1a1aa0511ee2d8e.png",
-    "static/media/crypto2.jpg": "/portfolio/static/media/crypto2.20c07232b25b1df78ba5.jpg",
     "static/media/icons.svg": "/portfolio/static/media/icons.aed1f4ea4245135e4c7a4c848c024b3b.svg",
     "index.html": "/portfolio/index.html",
-    "main.105db0d5.css.map": "/portfolio/static/css/main.105db0d5.css.map",
-    "main.eb07bd83.js.map": "/portfolio/static/js/main.eb07bd83.js.map"
+    "main.d98ebe5a.css.map": "/portfolio/static/css/main.d98ebe5a.css.map",
+    "main.f7893b3b.js.map": "/portfolio/static/js/main.f7893b3b.js.map"
   },
   "entrypoints": [
-    "static/css/main.105db0d5.css",
-    "static/js/main.eb07bd83.js"
+    "static/css/main.d98ebe5a.css",
+    "static/js/main.f7893b3b.js"
   ]
 }
