@@ -406,7 +406,7 @@
 .modalText {
   margin-bottom: 3rem;
   text-align: center;
-  > span {
+  > a {
     color: $color-accent; 
   }
 }
@@ -415,6 +415,7 @@
   margin-bottom: 4rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   column-gap: 2rem;
   row-gap: 1.2rem;
   color: #88adff;

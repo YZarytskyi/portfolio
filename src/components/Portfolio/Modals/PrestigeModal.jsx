@@ -10,19 +10,19 @@ const PrestigeModal = ({
   projectLinksGit,
   projectLinksLive,
   setIsModalOpen,
-  projectTitles,
+  projectTitles
 }) => {
   return (
-    <Modal
-      modalShow={modalShow}
-      setModalShow={setModalShow}
-      setIsModalOpen={setIsModalOpen}>
+    <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
         <h1 className={s.modalTitle}>{projectTitles[2]}</h1>
         <p className={s.modalText}>
-          At <span>PRESTIGE</span> all that you see is hand-picked and 100% true – sourced straight
-          from the best brands and their approved affiliates from US and over the world, only for
-          you.
+          At{' '}
+          <a href={projectLinksLive[2]} rel="nofollow noopener noreferrer" target="_blank">
+            PRESTIGE
+          </a>{' '}
+          all that you see is hand-picked and 100% true – sourced straight from the best brands and
+          their approved affiliates from US and over the world, only for you.
         </p>
         <ul className={s.modalToolingList}>
           <li>ReactJS</li>

@@ -10,21 +10,24 @@ const FilmotekaModal = ({
   projectLinksGit,
   projectLinksLive,
   setIsModalOpen,
-  projectTitles,
+  projectTitles
 }) => {
   return (
-    <Modal
-      modalShow={modalShow}
-      setModalShow={setModalShow}
-      setIsModalOpen={setIsModalOpen}>
+    <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
         <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
         <p className={s.modalText}>
-          <span>Filmoteka</span> is a comprehensive and in-depth resource for finding out more about
-          the movies you love. On <span>Filmoteka</span> you will find: information about your
-          favorite movies, new movies in theaters, list of Top available movies, its rating. By
-          creating an account with us, you will have the opportunity adding to &quot;Queue&quot; or
-          &quot;Watched&quot; your favorite movies.
+          <a href={projectLinksLive[1]} rel="nofollow noopener noreferrer" target="_blank">
+            Filmoteka
+          </a>{' '}
+          is a comprehensive and in-depth resource for finding out more about the movies you love.
+          On{' '}
+          <a href={projectLinksLive[1]} rel="nofollow noopener noreferrer" target="_blank">
+            Filmoteka
+          </a>{' '}
+          you will find: information about your favorite movies, new movies in theaters, list of Top
+          available movies, its rating. By creating an account with us, you will have the
+          opportunity adding to &quot;Queue&quot; or &quot;Watched&quot; your favorite movies.
         </p>
         <ul className={s.modalToolingList}>
           <li>Vanilla JS</li>

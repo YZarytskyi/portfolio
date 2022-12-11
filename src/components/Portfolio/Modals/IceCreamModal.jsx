@@ -10,17 +10,17 @@ const IceCreamModal = ({
   projectLinksGit,
   projectLinksLive,
   setIsModalOpen,
-  projectTitles,
+  projectTitles
 }) => {
   return (
-    <Modal
-      modalShow={modalShow}
-      setModalShow={setModalShow}
-      setIsModalOpen={setIsModalOpen}>
+    <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
         <h1 className={s.modalTitle}>{projectTitles[3]}</h1>
         <p className={s.modalText}>
-          Selling ice cream online is tricky, but it can be done. With <span>Ice-Cream</span>{' '}
+          Selling ice cream online is tricky, but it can be done. With{' '}
+          <a href={projectLinksLive[3]} rel="nofollow noopener noreferrer" target="_blank">
+            Ice-Cream
+          </a>{' '}
           same-day delivery, pick-up option, and Shopify POS, you can have your ice cream to your
           customers in no time. It is one of the best option to sell ice cream online.
         </p>
