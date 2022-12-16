@@ -181,16 +181,33 @@
 }
 
 .tabContent {
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.99);
+  will-change: transform;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tabContentCurrent {
+  position: static;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
   margin-top: 2rem;
-  display: block;
-  min-height: 18.5rem;
+  min-height: 24rem;
+  transform: scale(1);
 
-  @media (max-width: 890px) {
-    min-height: 24rem;
+  @media (max-width: 1199px) {
+    min-height: 18rem;
+  }
+  @media (max-width: 1071px) {
+    min-height: 23rem;
+  }
+  @media (max-width: 595px) {
+    min-height: 26rem;
   }
 }
 

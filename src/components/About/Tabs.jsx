@@ -7,8 +7,8 @@ import goIt from '../../assets/goIt.png';
 const Tabs = () => {
   const [tab, setTab] = useState(1);
 
-  const toggleTab = (i) => {
-    setTab(i);
+  const toggleTab = (index) => {
+    setTab(index);
   };
 
   return (
@@ -17,7 +17,7 @@ const Tabs = () => {
         <li>
           <button
             href=""
-            className={s.tab + ' ' + (tab === 1 && s.tabCurrent)}
+            className={`${s.tab} ${tab === 1 ? s.tabCurrent : ''}`}
             onClick={() => toggleTab(1)}>
             Tooling
           </button>
@@ -25,7 +25,7 @@ const Tabs = () => {
         <li>
           <button
             href=""
-            className={s.tab + ' ' + (tab === 2 && s.tabCurrent)}
+            className={`${s.tab} ${tab === 2 ? s.tabCurrent : ''}`}
             onClick={() => toggleTab(2)}>
             Certification
           </button>
@@ -33,7 +33,7 @@ const Tabs = () => {
       </ul>
 
       <div className={s.tabContentContainer}>
-        <div className={s.tabContent + ' ' + (tab === 1 && s.tabContentCurrent)}>
+        <div className={`${s.tabContent} ${tab === 1 ? s.tabContentCurrent : ''}`}>
           <ul className={s.toolsList}>
             <li className={s.toolsItem}>
               <div className={s.toolsItemInner}>
@@ -101,15 +101,14 @@ const Tabs = () => {
             </li>
           </ul>
         </div>
-        <div className={s.tabContent + ' ' + (tab === 2 && s.tabContentCurrent)}>
+        <div className={`${s.tabContent} ${tab === 2 ? s.tabContentCurrent : ''}`}>
           <p className={s.certification}>
             <a
               href="https://goit.global/ua/courses/bootcamp/"
               target="_blank"
               rel="noopener noreferrer nofollow">
               Fullstack Bootcamp
-              <img src={goIt} alt="GoIt school logo" className={s.goItLogo} />
-              | 2022
+              <img src={goIt} alt="GoIt school logo" className={s.goItLogo} />| 2022
             </a>
             <a
               href="https://it-generation.gov.ua"

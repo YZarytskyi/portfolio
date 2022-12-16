@@ -17,8 +17,8 @@ const mobileImages = [crypto2, filmoteka2, eShop2, iceCream2];
 const projectTitles = ['Crypto', 'Filmoteka', 'Prestige', 'Ice-cream'];
 
 const Portfolio = () => {
-  const DESKTOP = 'desktop'
-  const MOBILE = 'mobile'
+  const DESKTOP = 'desktop';
+  const MOBILE = 'mobile';
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
@@ -28,8 +28,8 @@ const Portfolio = () => {
   const [modalShowFilmoteka, setModalShowFilmoteka] = useState(false);
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
   const [modalShowIceCream, setModalShowIceCream] = useState(false);
-  const [device, setDevice] = useState(null)
-  
+  const [device, setDevice] = useState(null);
+
   const refWrapper = useRef(null);
   const refImage = useRef(null);
 
@@ -39,19 +39,19 @@ const Portfolio = () => {
     setModalShowPrestige,
     setModalShowIceCream
   ];
-  
+
   const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
   const nextImgIndex = activeIndex === desktopImages.length - 1 ? 0 : activeIndex + 1;
 
   useEffect(() => {
-    const handleResize = () => setDevice(window.innerWidth >= 1200 ? DESKTOP : MOBILE)
-    handleResize()
-    window.addEventListener('resize', handleResize)
+    const handleResize = () => setDevice(window.innerWidth >= 1200 ? DESKTOP : MOBILE);
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const mouseover = () => setIsImgHovered(true);
@@ -69,10 +69,10 @@ const Portfolio = () => {
   useEffect(() => {
     let interval;
     if (device === DESKTOP) {
-        if (slideChangeClick) {
-          setActiveIndex(Number(slideChangeClick));
-          setSlideChangeClick(null);
-        }
+      if (slideChangeClick) {
+        setActiveIndex(Number(slideChangeClick));
+        setSlideChangeClick(null);
+      }
       if (!isImgHovered && !slideChangeClick && !isModalOpen) {
         interval = setInterval(() => {
           setActiveIndex((currentIndex) => {
@@ -89,7 +89,7 @@ const Portfolio = () => {
     if (device === MOBILE) {
       setActiveIndex(0);
     }
-  }, [device])
+  }, [device]);
 
   useEffect(() => {
     const wrapper = refWrapper.current;
@@ -119,7 +119,7 @@ const Portfolio = () => {
   }, []);
 
   function onClickSlideChange(e) {
-    const targetIndex = e.target.dataset.index
+    const targetIndex = e.target.dataset.index;
     setSlideChangeClick(targetIndex);
     if (device === MOBILE) {
       const swiper = document.querySelector('.swiper').swiper;
@@ -139,24 +139,24 @@ const Portfolio = () => {
     <>
       <section id="portfolio" className={s.portfolio}>
         <div className={s.container}>
-          <h2 className={s.title + ' ' + s.titlePortfolio}>Portfolio</h2>
+          <h2 className={`${s.title} ${s.titlePortfolio}`}>Portfolio</h2>
           <div className={s.presentation}>
             <div className={s.iMac} ref={refImage}>
               <div className={s.iMacWrapper} ref={refWrapper}></div>
               <div className={s.iMacWrapper2}>
                 <img
                   src={desktopImages[prevImgIndex]}
-                  className={s.sliderImgPrev + ' ' + s.sliderImg}
+                  className={`${s.sliderImgPrev} ${s.sliderImg}`}
                   key={prevImgIndex}
                 />
                 <img
                   src={desktopImages[activeIndex]}
-                  className={s.sliderImg + ' ' + s.imageLg}
+                  className={`${s.sliderImg} ${s.imageLg}`}
                   key={activeIndex}
                 />
                 <img
                   src={desktopImages[nextImgIndex]}
-                  className={s.sliderImgNext + ' ' + s.sliderImg}
+                  className={`${s.sliderImgNext} ${s.sliderImg}`}
                   key={nextImgIndex}
                 />
               </div>
@@ -165,13 +165,13 @@ const Portfolio = () => {
               <div className={s.iphoneWrapper} role="button" onClick={() => onClickModalOpen()}>
                 <img
                   src={mobileImages[prevImgIndex]}
-                  className={s.sliderImgMobilePrev + ' ' + s.mobilePhoto}
+                  className={`${s.sliderImgMobilePrev} ${s.mobilePhoto}`}
                   key={prevImgIndex}
                 />
                 <img src={mobileImages[activeIndex]} className={s.mobilePhoto} key={activeIndex} />
                 <img
                   src={mobileImages[nextImgIndex]}
-                  className={s.sliderImgMobileNext + ' ' + s.mobilePhoto}
+                  className={`${s.sliderImgMobileNext} ${s.mobilePhoto}`}
                   key={nextImgIndex}
                 />
               </div>
@@ -199,7 +199,7 @@ const Portfolio = () => {
             {projectTitles.map((title, i) => (
               <li className={s.projectItem} key={i}>
                 <button
-                  className={s.projectBtn + ' ' + (i === activeIndex && s.activeProject)}
+                  className={`${s.projectBtn} ${i === activeIndex ? s.activeProject : ''}`}
                   data-index={i}>
                   {title}
                 </button>

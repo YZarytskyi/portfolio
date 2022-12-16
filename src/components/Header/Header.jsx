@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { useRef } from 'react';
 import s from './Header.module.scss';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const mobileMenuBtnRef = useRef(null);
 
   const onClickOpenMenu = () => {
     if (innerWidth < 768) {
@@ -19,26 +17,26 @@ const Header = () => {
         <a href="#home" className={s.logo}>
           YZ
         </a>
-        <div className={s.menuContainer + ' ' + (isOpen ? s.open : '')}>
+        <div className={`${s.menuContainer} ${isOpen ? s.open : ''}`}>
           <nav className={s.headerNav}>
             <ul className={s.navList}>
               <li className={s.navItem}>
-                <a href="#home" className={s.navLink} onClick={() => onClickOpenMenu()}>
+                <a href="#home" className={s.navLink} onClick={onClickOpenMenu}>
                   Home
                 </a>
               </li>
               <li className={s.navItem}>
-                <a href="#about" className={s.navLink} onClick={() => onClickOpenMenu()}>
+                <a href="#about" className={s.navLink} onClick={onClickOpenMenu}>
                   About
                 </a>
               </li>
               <li className={s.navItem}>
-                <a href="#portfolio" className={s.navLink} onClick={() => onClickOpenMenu()}>
+                <a href="#portfolio" className={s.navLink} onClick={onClickOpenMenu}>
                   Portfolio
                 </a>
               </li>
               <li className={s.navItem}>
-                <a href="#contact" className={s.navLink} onClick={() => onClickOpenMenu()}>
+                <a href="#contact" className={s.navLink} onClick={onClickOpenMenu}>
                   Contact
                 </a>
               </li>
@@ -46,11 +44,8 @@ const Header = () => {
           </nav>
           <a className={s.resumeLink}>Resume</a>
         </div>
-        <button className={s.mobileMenuBtn} ref={mobileMenuBtnRef}>
-          <svg
-            onClick={onClickOpenMenu}
-            className={s.ham + ' ' + s.ham3 + ' ' + (isOpen ? s.active : '')}
-            viewBox="0 0 100 100">
+        <button className={s.mobileMenuBtn} onClick={onClickOpenMenu}>
+          <svg className={`${s.ham} ${s.ham3} ${isOpen ? s.active : ''}`} viewBox="0 0 100 100">
             <path
               className={s.line + ' ' + s.top}
               d="m 70,33 h -40 c -11.092231,0 11.883874,13.496726 -3.420361,12.956839 -0.962502,-2.089471 -2.222071,-3.282996 -4.545687,-3.282996 -2.323616,0 -5.113897,2.622752 -5.113897,7.071068 0,4.448316 2.080609,7.007933 5.555839,7.007933 2.401943,0 2.96769,-1.283974 4.166879,-3.282995 2.209342,0.273823 4.031294,1.642466 5.857227,-0.252538 v -13.005715 16.288404 h 7.653568"
