@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.b6d4b4cf.css",
-    "main.js": "/portfolio/static/js/main.123f41b7.js",
+    "main.css": "/portfolio/static/css/main.05685c0e.css",
+    "main.js": "/portfolio/static/js/main.1f05b877.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
     "static/media/crypto1.jpg": "/portfolio/static/media/crypto1.23fb8fdaf883b5a4b0a1.jpg",
@@ -11,16 +11,16 @@
     "static/media/imac.png": "/portfolio/static/media/imac.1e48c1a1aa0511ee2d8e.png",
     "static/media/goIt.png": "/portfolio/static/media/goIt.ef35b3e5ece670146d7d.png",
     "static/media/filmoteka2.jpg": "/portfolio/static/media/filmoteka2.b5cdbd45a121cc5344a2.jpg",
-    "static/media/crypto2.jpg": "/portfolio/static/media/crypto2.0a70b6fb099326bcaf74.jpg",
+    "static/media/crypto2.jpg": "/portfolio/static/media/crypto2.8c3643368b7b67c4c030.jpg",
     "static/media/iceCream2.jpg": "/portfolio/static/media/iceCream2.8ea135df408ca1760a03.jpg",
     "static/media/icons.svg": "/portfolio/static/media/icons.2397dab97bdd358c998617cfb99e6f87.svg",
     "static/media/eshop2.jpg": "/portfolio/static/media/eshop2.2657928136f6f728699f.jpg",
     "index.html": "/portfolio/index.html",
-    "main.b6d4b4cf.css.map": "/portfolio/static/css/main.b6d4b4cf.css.map",
-    "main.123f41b7.js.map": "/portfolio/static/js/main.123f41b7.js.map"
+    "main.05685c0e.css.map": "/portfolio/static/css/main.05685c0e.css.map",
+    "main.1f05b877.js.map": "/portfolio/static/js/main.1f05b877.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6d4b4cf.css",
-    "static/js/main.123f41b7.js"
+    "static/css/main.05685c0e.css",
+    "static/js/main.1f05b877.js"
   ]
 }
