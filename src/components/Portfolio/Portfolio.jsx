@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react';
 import s from './Portfolio.module.scss';
 import crypto1 from '../../assets/crypto1.jpg';
-import crypto2 from '../../assets/crypto2.png';
-import filmoteka from '../../assets/filmoteka.png';
-import filmoteka2 from '../../assets/filmoteka2.png';
+import crypto2 from '../../assets/crypto2.jpg';
+import filmoteka from '../../assets/filmoteka.jpg';
+import filmoteka2 from '../../assets/filmoteka2.jpg';
 import eShop from '../../assets/eShop.jpg';
-import eShop2 from '../../assets/eshop2.png';
+import eShop2 from '../../assets/eshop2.jpg';
 import iceCream from '../../assets/iceCream.jpg';
-import iceCream2 from '../../assets/iceCream2.png';
+import iceCream2 from '../../assets/iceCream2.jpg';
 import { useEffect } from 'react';
 import Modals from './Modals/Modals';
 import MobileSwiper from './MobileSwiper';
