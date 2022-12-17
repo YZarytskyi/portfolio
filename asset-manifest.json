@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0e4ed1c5.css",
-    "main.js": "/portfolio/static/js/main.cdff5639.js",
-    "static/media/filmoteka.png": "/portfolio/static/media/filmoteka.145ff3809acc0823a7b2.png",
+    "main.css": "/portfolio/static/css/main.b6d4b4cf.css",
+    "main.js": "/portfolio/static/js/main.123f41b7.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
-    "static/media/filmoteka2.png": "/portfolio/static/media/filmoteka2.a836718a16cd5a0ae133.png",
-    "static/media/crypto2.png": "/portfolio/static/media/crypto2.3f645e76054865ecad16.png",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
-    "static/media/iceCream2.png": "/portfolio/static/media/iceCream2.0558022f84ffd886a091.png",
-    "static/media/crypto1.jpg": "/portfolio/static/media/crypto1.967edd3691ec7b6b72c9.jpg",
+    "static/media/crypto1.jpg": "/portfolio/static/media/crypto1.23fb8fdaf883b5a4b0a1.jpg",
+    "static/media/filmoteka.jpg": "/portfolio/static/media/filmoteka.4ef48e4db0d7b4fda9c1.jpg",
     "static/media/iceCream.jpg": "/portfolio/static/media/iceCream.288b38bad6d59c461ba8.jpg",
     "static/media/eShop.jpg": "/portfolio/static/media/eShop.60c78312a16fda1b63a8.jpg",
-    "static/media/eshop2.png": "/portfolio/static/media/eshop2.a0a11f6752e93192a6e4.png",
     "static/media/imac.png": "/portfolio/static/media/imac.1e48c1a1aa0511ee2d8e.png",
     "static/media/goIt.png": "/portfolio/static/media/goIt.ef35b3e5ece670146d7d.png",
+    "static/media/filmoteka2.jpg": "/portfolio/static/media/filmoteka2.b5cdbd45a121cc5344a2.jpg",
+    "static/media/crypto2.jpg": "/portfolio/static/media/crypto2.0a70b6fb099326bcaf74.jpg",
+    "static/media/iceCream2.jpg": "/portfolio/static/media/iceCream2.8ea135df408ca1760a03.jpg",
     "static/media/icons.svg": "/portfolio/static/media/icons.2397dab97bdd358c998617cfb99e6f87.svg",
+    "static/media/eshop2.jpg": "/portfolio/static/media/eshop2.2657928136f6f728699f.jpg",
     "index.html": "/portfolio/index.html",
-    "main.0e4ed1c5.css.map": "/portfolio/static/css/main.0e4ed1c5.css.map",
-    "main.cdff5639.js.map": "/portfolio/static/js/main.cdff5639.js.map"
+    "main.b6d4b4cf.css.map": "/portfolio/static/css/main.b6d4b4cf.css.map",
+    "main.123f41b7.js.map": "/portfolio/static/js/main.123f41b7.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e4ed1c5.css",
-    "static/js/main.cdff5639.js"
+    "static/css/main.b6d4b4cf.css",
+    "static/js/main.123f41b7.js"
   ]
 }
