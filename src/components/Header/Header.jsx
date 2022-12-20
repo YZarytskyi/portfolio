@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import s from './Header.module.scss';
+import sprite from '../../assets/icons.svg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +44,45 @@ const Header = () => {
             </ul>
           </nav>
           <a className={s.resumeLink}>Resume</a>
+          <ul className={s.socialMedia}>
+            <li className={s.socialItem}>
+              <a
+                href="https://github.com/YZarytskyi"
+                target="_blank"
+                rel="noopener noreferrer nofollow">
+                <svg className={s.socialIcon}>
+                  <use href={`${sprite}#icon-github`}></use>
+                </svg>
+              </a>
+            </li>
+            <li className={s.socialItem}>
+              <a href="https://t.me/y_zrt" target="_blank" rel="noopener noreferrer nofollow">
+                <svg className={s.socialIcon}>
+                  <use href={`${sprite}#icon-telegram`}></use>
+                </svg>
+              </a>
+            </li>
+            <li className={s.socialItem}>
+              <a
+                href="https://www.instagram.com/y.zarytskyi/"
+                target="_blank"
+                rel="noopener noreferrer nofollow">
+                <svg className={s.socialIcon}>
+                  <use href={`${sprite}#icon-instagram`}></use>
+                </svg>
+              </a>
+            </li>
+            <li className={s.socialItem}>
+              <a
+                href="https://www.linkedin.com/in/yurii-zarytskyi"
+                target="_blank"
+                rel="noopener noreferrer nofollow">
+                <svg className={s.socialIcon}>
+                  <use href={`${sprite}#icon-linkedIn`}></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
         <button className={s.mobileMenuBtn} onClick={onClickOpenMenu}>
           <svg className={`${s.ham} ${s.ham3} ${isOpen ? s.active : ''}`} viewBox="0 0 100 100">
