@@ -12,14 +12,13 @@ import { useEffect } from 'react';
 import Modals from './Modals/Modals';
 import MobileSwiper from './MobileSwiper';
 
+const DESKTOP = 'desktop';
+const MOBILE = 'mobile';
 const desktopImages = [crypto1, filmoteka, eShop, iceCream];
 const mobileImages = [crypto2, filmoteka2, eShop2, iceCream2];
 const projectTitles = ['Crypto', 'Filmoteka', 'Prestige', 'Ice-cream'];
 
 const Portfolio = () => {
-  const DESKTOP = 'desktop';
-  const MOBILE = 'mobile';
-
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
   const [slideChangeClick, setSlideChangeClick] = useState(null);

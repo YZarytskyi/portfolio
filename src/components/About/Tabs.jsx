@@ -107,7 +107,7 @@ const Tabs = () => {
               href="https://goit.global/ua/courses/bootcamp/"
               target="_blank"
               rel="noopener noreferrer nofollow">
-              Fullstack Bootcamp
+              Front-end Bootcamp
               <img src={goIt} alt="GoIt school logo" className={s.goItLogo} />| 2022
             </a>
             <a
@@ -120,11 +120,10 @@ const Tabs = () => {
                 <use href={`${sprite}#itGeneration`}></use>
               </svg>
             </a>
-            Intensive 5-month-long course, with over 400 hours of coding. HTML, CSS, Javascript,
+            Intensive 5-month-long course, with over 500 hours of coding. HTML, CSS, Javascript,
             React, Node JS, additional coursework on soft skills, teamwork, project management,
-            agile methodologies and technologies, tools like Redux state management library,
-            Firebase Firestore Cloud database, Jest testing framework. Built projects from zero to
-            production level.
+            agile methodologies, tools like Redux state management library, Firebase Cloud database,
+            Jest testing framework. Built projects from zero to production level.
           </p>
         </div>
       </div>

@@ -21,8 +21,8 @@ const PrestigeModal = ({
           <a href={projectLinksLive[2]} rel="nofollow noopener noreferrer" target="_blank">
             PRESTIGE
           </a>{' '}
-          all that you see is hand-picked and 100% true – sourced straight from the best brands and
-          their approved affiliates from US and over the world, only for you.
+          provides each customer with various trendy items at affordable prices. Customers have the
+          opportunity to view the product, add it to the cart and complete the order online.
         </p>
         <ul className={s.modalToolingList}>
           <li>ReactJS</li>

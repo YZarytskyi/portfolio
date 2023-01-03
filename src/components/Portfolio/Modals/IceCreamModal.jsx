@@ -21,7 +21,7 @@ const IceCreamModal = ({
           <a href={projectLinksLive[3]} rel="nofollow noopener noreferrer" target="_blank">
             Ice-Cream
           </a>{' '}
-          same-day delivery, pick-up option, and Shopify POS, you can have your ice cream to your
+          same-day delivery, pick-up option, you can have your ice cream to your
           customers in no time. It is one of the best option to sell ice cream online.
         </p>
         <ul className={s.modalToolingList}>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import s from './Header.module.scss';
+import resume from '../../assets/Yurii_Zarytskyi_Front-end_Developer_CV.pdf';
 import sprite from '../../assets/icons.svg';
+import s from './Header.module.scss';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,13 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <a className={s.resumeLink}>Resume</a>
+          <a
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={s.resumeLink}>
+            Resume
+          </a>
           <ul className={s.socialMedia}>
             <li className={s.socialItem}>
               <a
