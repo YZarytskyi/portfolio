@@ -52,11 +52,11 @@ const FixContacts = () => {
         </li>
       </ul>
       <a
-        href="mailto: yurazar222@gmail.com"
+        href="mailto: zarytskyi222@gmail.com"
         target="_blank"
         rel="noopener noreferrer nofollow"
         className={s.fixEmail}>
-        yurazar222@gmail.com
+        zarytskyi222@gmail.com
       </a>
     </>
   );

@@ -25,7 +25,7 @@ const Contact = () => {
           a question or just want to say hi, I’ll try my best to get back to you!
         </p>
         <a
-          href="mailto: yurazar222@gmail.com"
+          href="mailto: zarytskyi222@gmail.com"
           target="_blank"
           rel="noopener noreferrer nofollow"
           className={s.link}>
