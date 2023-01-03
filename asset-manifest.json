@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.285242ad.css",
-    "main.js": "/portfolio/static/js/main.c8084be5.js",
+    "main.css": "/portfolio/static/css/main.1755a6fa.css",
+    "main.js": "/portfolio/static/js/main.a65511a5.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
     "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.99eb799d21cbf588e52a.pdf",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
@@ -17,11 +17,11 @@
     "static/media/icons.svg": "/portfolio/static/media/icons.2397dab97bdd358c998617cfb99e6f87.svg",
     "static/media/eshop2.jpg": "/portfolio/static/media/eshop2.2657928136f6f728699f.jpg",
     "index.html": "/portfolio/index.html",
-    "main.285242ad.css.map": "/portfolio/static/css/main.285242ad.css.map",
-    "main.c8084be5.js.map": "/portfolio/static/js/main.c8084be5.js.map"
+    "main.1755a6fa.css.map": "/portfolio/static/css/main.1755a6fa.css.map",
+    "main.a65511a5.js.map": "/portfolio/static/js/main.a65511a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.285242ad.css",
-    "static/js/main.c8084be5.js"
+    "static/css/main.1755a6fa.css",
+    "static/js/main.a65511a5.js"
   ]
 }
