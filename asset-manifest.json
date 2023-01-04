@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1755a6fa.css",
-    "main.js": "/portfolio/static/js/main.a65511a5.js",
+    "main.css": "/portfolio/static/css/main.78586f2d.css",
+    "main.js": "/portfolio/static/js/main.e533490b.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
-    "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.99eb799d21cbf588e52a.pdf",
+    "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.0b5e2914dd319cecdf6c.pdf",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
     "static/media/crypto1.jpg": "/portfolio/static/media/crypto1.23fb8fdaf883b5a4b0a1.jpg",
     "static/media/filmoteka.jpg": "/portfolio/static/media/filmoteka.4ef48e4db0d7b4fda9c1.jpg",
@@ -17,11 +17,11 @@
     "static/media/icons.svg": "/portfolio/static/media/icons.2397dab97bdd358c998617cfb99e6f87.svg",
     "static/media/eshop2.jpg": "/portfolio/static/media/eshop2.2657928136f6f728699f.jpg",
     "index.html": "/portfolio/index.html",
-    "main.1755a6fa.css.map": "/portfolio/static/css/main.1755a6fa.css.map",
-    "main.a65511a5.js.map": "/portfolio/static/js/main.a65511a5.js.map"
+    "main.78586f2d.css.map": "/portfolio/static/css/main.78586f2d.css.map",
+    "main.e533490b.js.map": "/portfolio/static/js/main.e533490b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1755a6fa.css",
-    "static/js/main.a65511a5.js"
+    "static/css/main.78586f2d.css",
+    "static/js/main.e533490b.js"
   ]
 }
