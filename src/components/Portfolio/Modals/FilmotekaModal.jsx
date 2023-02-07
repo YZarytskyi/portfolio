@@ -15,14 +15,14 @@ const FilmotekaModal = ({
   return (
     <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
-        <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
+        <h1 className={s.modalTitle}>{projectTitles[2]}</h1>
         <p className={s.modalText}>
-          <a href={projectLinksLive[1]} rel="nofollow noopener noreferrer" target="_blank">
+          <a href={projectLinksLive[2]} rel="nofollow noopener noreferrer" target="_blank">
             Filmoteka
           </a>{' '}
           is a comprehensive and in-depth resource for finding out more about the movies you love.
           On{' '}
-          <a href={projectLinksLive[1]} rel="nofollow noopener noreferrer" target="_blank">
+          <a href={projectLinksLive[2]} rel="nofollow noopener noreferrer" target="_blank">
             Filmoteka
           </a>{' '}
           you will find: information about your favorite movies, new movies in theaters, list of Top

@@ -3,12 +3,15 @@ import CryptoModal from './CryptoModal';
 import FilmotekaModal from './FilmotekaModal';
 import PrestigeModal from './PrestigeModal';
 import IceCreamModal from './IceCreamModal';
+import WalletModal from './WalletModal';
 
 const Modals = ({
   activeIndex,
   setIsModalOpen,
   modalShowCrypto,
   setModalShowCrypto,
+  modalShowWallet,
+  setModalShowWallet,
   modalShowFilmoteka,
   setModalShowFilmoteka,
   modalShowPrestige,
@@ -17,22 +20,25 @@ const Modals = ({
   setModalShowIceCream,
   projectTitles
 }) => {
-  const modalsList = [CryptoModal, FilmotekaModal, PrestigeModal, IceCreamModal];
-  const states = [modalShowCrypto, modalShowFilmoteka, modalShowPrestige, modalShowIceCream];
+  const modalsList = [CryptoModal, WalletModal, FilmotekaModal, PrestigeModal, IceCreamModal];
+  const states = [modalShowCrypto, modalShowWallet, modalShowFilmoteka, modalShowPrestige, modalShowIceCream];
   const setStates = [
     setModalShowCrypto,
+    setModalShowWallet,
     setModalShowFilmoteka,
     setModalShowPrestige,
     setModalShowIceCream
   ];
   const projectLinksGit = [
     'https://github.com/YZarytskyi/finance-crypto',
+    'https://github.com/YZarytskyi/wallet',
     'https://github.com/YZarytskyi/filmoteka',
     'https://github.com/YZarytskyi/e-shop',
     'https://github.com/YZarytskyi/ice-cream-team-project'
   ];
   const projectLinksLive = [
     'https://yzarytskyi.github.io/finance-crypto/',
+    'https://yzarytskyi.github.io/wallet/',
     'https://yzarytskyi.github.io/filmoteka/',
     'https://yzarytskyi.github.io/e-shop/',
     'https://yzarytskyi.github.io/ice-cream-team-project/'

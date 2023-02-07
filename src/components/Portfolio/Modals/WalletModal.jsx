@@ -3,7 +3,7 @@ import Modal from '../../common/Modal';
 import s from '../Portfolio.module.scss';
 import InfoLinks from './InfoLinks';
 
-const PrestigeModal = ({
+const WalletModal = ({
   modalShow,
   setModalShow,
   activeIndex,
@@ -15,20 +15,21 @@ const PrestigeModal = ({
   return (
     <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
-        <h1 className={s.modalTitle}>{projectTitles[3]}</h1>
+        <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
         <p className={s.modalText}>
-          At{' '}
-          <a href={projectLinksLive[3]} rel="nofollow noopener noreferrer" target="_blank">
-            PRESTIGE
+          <a href={projectLinksLive[1]} rel="nofollow noopener noreferrer" target="_blank">
+            Wallet
           </a>{' '}
-          provides each customer with various trendy items at affordable prices. Customers have the
-          opportunity to view the product, add it to the cart and complete the order online.
+          is a powerful finance manager that offer you a 360° view of your finances. We combine
+          best-in-breed AI driven categorization and analytics with a deep set of features that are
+          proven to work.
         </p>
         <ul className={s.modalToolingList}>
-          <li>ReactJS</li>
-          <li>Redux</li>
-          <li>Bootstrap</li>
-          <li>SASS</li>
+          <li>React</li>
+          <li>Redux Toolkit</li>
+          <li>Chart.js</li>
+          <li>Formik</li>
+          <li>Axios</li>
         </ul>
         <InfoLinks
           activeIndex={activeIndex}
@@ -40,4 +41,4 @@ const PrestigeModal = ({
   );
 };
 
-export default PrestigeModal;
+export default WalletModal;

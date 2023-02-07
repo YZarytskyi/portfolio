@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import s from './Portfolio.module.scss';
 import crypto1 from '../../assets/crypto1.jpg';
 import crypto2 from '../../assets/crypto2.jpg';
+import wallet from '../../assets/wallet.png';
+import wallet2 from '../../assets/wallet2.png';
 import filmoteka from '../../assets/filmoteka.jpg';
 import filmoteka2 from '../../assets/filmoteka2.jpg';
 import eShop from '../../assets/eShop.jpg';
@@ -14,9 +16,9 @@ import MobileSwiper from './MobileSwiper';
 
 const DESKTOP = 'desktop';
 const MOBILE = 'mobile';
-const desktopImages = [crypto1, filmoteka, eShop, iceCream];
-const mobileImages = [crypto2, filmoteka2, eShop2, iceCream2];
-const projectTitles = ['Crypto', 'Filmoteka', 'Prestige', 'Ice-cream'];
+const desktopImages = [crypto1, wallet, filmoteka, eShop, iceCream];
+const mobileImages = [crypto2, wallet2, filmoteka2, eShop2, iceCream2];
+const projectTitles = ['Crypto', 'Wallet', 'Filmoteka', 'Prestige', 'Ice-cream'];
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,6 +26,7 @@ const Portfolio = () => {
   const [slideChangeClick, setSlideChangeClick] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalShowCrypto, setModalShowCrypto] = useState(false);
+  const [modalShowWallet, setModalShowWallet] = useState(false);
   const [modalShowFilmoteka, setModalShowFilmoteka] = useState(false);
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
   const [modalShowIceCream, setModalShowIceCream] = useState(false);
@@ -34,6 +37,7 @@ const Portfolio = () => {
 
   const modalsSetState = [
     setModalShowCrypto,
+    setModalShowWallet,
     setModalShowFilmoteka,
     setModalShowPrestige,
     setModalShowIceCream
@@ -219,6 +223,8 @@ const Portfolio = () => {
         setModalShowPrestige={setModalShowPrestige}
         modalShowIceCream={modalShowIceCream}
         setModalShowIceCream={setModalShowIceCream}
+        modalShowWallet={modalShowWallet}
+        setModalShowWallet={setModalShowWallet}
       />
     </>
   );

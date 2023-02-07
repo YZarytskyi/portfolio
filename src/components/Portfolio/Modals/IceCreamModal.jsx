@@ -15,10 +15,10 @@ const IceCreamModal = ({
   return (
     <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
-        <h1 className={s.modalTitle}>{projectTitles[3]}</h1>
+        <h1 className={s.modalTitle}>{projectTitles[4]}</h1>
         <p className={s.modalText}>
           Selling ice cream online is tricky, but it can be done. With{' '}
-          <a href={projectLinksLive[3]} rel="nofollow noopener noreferrer" target="_blank">
+          <a href={projectLinksLive[4]} rel="nofollow noopener noreferrer" target="_blank">
             Ice-Cream
           </a>{' '}
           same-day delivery, pick-up option, you can have your ice cream to your
