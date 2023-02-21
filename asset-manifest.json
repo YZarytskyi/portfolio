@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3cfcd312.css",
-    "main.js": "/portfolio/static/js/main.555e8f6a.js",
+    "main.css": "/portfolio/static/css/main.e6cbce14.css",
+    "main.js": "/portfolio/static/js/main.1f389af5.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
-    "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.94d94439b8b317ea5721.pdf",
+    "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.0c9e8e289af7d63c0d65.pdf",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
     "static/media/wallet.png": "/portfolio/static/media/wallet.0c2deffc23ac846bdc49.png",
     "static/media/crypto1.jpg": "/portfolio/static/media/crypto1.23fb8fdaf883b5a4b0a1.jpg",
@@ -19,11 +19,11 @@
     "static/media/icons.svg": "/portfolio/static/media/icons.2397dab97bdd358c998617cfb99e6f87.svg",
     "static/media/eshop2.jpg": "/portfolio/static/media/eshop2.2657928136f6f728699f.jpg",
     "index.html": "/portfolio/index.html",
-    "main.3cfcd312.css.map": "/portfolio/static/css/main.3cfcd312.css.map",
-    "main.555e8f6a.js.map": "/portfolio/static/js/main.555e8f6a.js.map"
+    "main.e6cbce14.css.map": "/portfolio/static/css/main.e6cbce14.css.map",
+    "main.1f389af5.js.map": "/portfolio/static/js/main.1f389af5.js.map"
   },
   "entrypoints": [
-    "static/css/main.3cfcd312.css",
-    "static/js/main.555e8f6a.js"
+    "static/css/main.e6cbce14.css",
+    "static/js/main.1f389af5.js"
   ]
 }
