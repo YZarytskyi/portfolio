@@ -1,24 +1,25 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import s from './Portfolio.module.scss';
-import crypto1 from '../../assets/crypto1.jpg';
-import crypto2 from '../../assets/crypto2.jpg';
-import wallet from '../../assets/wallet.png';
-import wallet2 from '../../assets/wallet2.png';
-import filmoteka from '../../assets/filmoteka.jpg';
-import filmoteka2 from '../../assets/filmoteka2.jpg';
-import eShop from '../../assets/eShop.jpg';
-import eShop2 from '../../assets/eshop2.jpg';
-import iceCream from '../../assets/iceCream.jpg';
-import iceCream2 from '../../assets/iceCream2.jpg';
-import { useEffect } from 'react';
+import crypto1 from 'assets/crypto1.jpg';
+import crypto2 from 'assets/crypto2.jpg';
+import jazzRender from 'assets/jazzRender.png';
+import jazzRender2 from 'assets/jazzRender2.png';
+import wallet from 'assets/wallet.png';
+import wallet2 from 'assets/wallet2.png';
+import eShop from 'assets/eShop.jpg';
+import eShop2 from 'assets/eshop2.jpg';
+import filmoteka from 'assets/filmoteka.jpg';
+import filmoteka2 from 'assets/filmoteka2.jpg';
+import iceCream from 'assets/iceCream.jpg';
+import iceCream2 from 'assets/iceCream2.jpg';
 import Modals from './Modals/Modals';
 import MobileSwiper from './MobileSwiper';
 
 const DESKTOP = 'desktop';
 const MOBILE = 'mobile';
-const desktopImages = [crypto1, wallet, filmoteka, eShop, iceCream];
-const mobileImages = [crypto2, wallet2, filmoteka2, eShop2, iceCream2];
-const projectTitles = ['Crypto', 'Wallet', 'Filmoteka', 'Prestige', 'Ice-cream'];
+const desktopImages = [crypto1, jazzRender, wallet, eShop, filmoteka, iceCream];
+const mobileImages = [crypto2, jazzRender2, wallet2, eShop2, filmoteka2, iceCream2];
+const projectTitles = ['Crypto', 'Jazz Render', 'Wallet', 'Prestige', 'Filmoteka', 'Ice-cream'];
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -26,6 +27,7 @@ const Portfolio = () => {
   const [slideChangeClick, setSlideChangeClick] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalShowCrypto, setModalShowCrypto] = useState(false);
+  const [modalJazzRender, setModalJazzRender] = useState(false);
   const [modalShowWallet, setModalShowWallet] = useState(false);
   const [modalShowFilmoteka, setModalShowFilmoteka] = useState(false);
   const [modalShowPrestige, setModalShowPrestige] = useState(false);
@@ -37,9 +39,10 @@ const Portfolio = () => {
 
   const modalsSetState = [
     setModalShowCrypto,
+    setModalJazzRender,
     setModalShowWallet,
-    setModalShowFilmoteka,
     setModalShowPrestige,
+    setModalShowFilmoteka,
     setModalShowIceCream
   ];
 
@@ -212,19 +215,20 @@ const Portfolio = () => {
         </div>
       </section>
       <Modals
-        activeIndex={activeIndex}
         setIsModalOpen={setIsModalOpen}
         projectTitles={projectTitles}
         modalShowCrypto={modalShowCrypto}
         setModalShowCrypto={setModalShowCrypto}
+        modalJazzRender={modalJazzRender}
+        setModalJazzRender={setModalJazzRender}
+        modalShowWallet={modalShowWallet}
+        setModalShowWallet={setModalShowWallet}
         modalShowFilmoteka={modalShowFilmoteka}
         setModalShowFilmoteka={setModalShowFilmoteka}
         modalShowPrestige={modalShowPrestige}
         setModalShowPrestige={setModalShowPrestige}
         modalShowIceCream={modalShowIceCream}
         setModalShowIceCream={setModalShowIceCream}
-        modalShowWallet={modalShowWallet}
-        setModalShowWallet={setModalShowWallet}
       />
     </>
   );

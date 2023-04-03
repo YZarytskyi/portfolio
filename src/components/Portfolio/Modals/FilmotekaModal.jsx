@@ -6,23 +6,22 @@ import InfoLinks from './InfoLinks';
 const FilmotekaModal = ({
   modalShow,
   setModalShow,
-  activeIndex,
-  projectLinksGit,
-  projectLinksLive,
   setIsModalOpen,
-  projectTitles
+  projectLinkGit,
+  projectLinkLive,
+  projectTitle
 }) => {
   return (
     <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
-        <h1 className={s.modalTitle}>{projectTitles[2]}</h1>
+        <h1 className={s.modalTitle}>{projectTitle}</h1>
         <p className={s.modalText}>
-          <a href={projectLinksLive[2]} rel="nofollow noopener noreferrer" target="_blank">
+          <a href={projectLinkLive} rel="nofollow noopener noreferrer" target="_blank">
             Filmoteka
           </a>{' '}
           is a comprehensive and in-depth resource for finding out more about the movies you love.
           On{' '}
-          <a href={projectLinksLive[2]} rel="nofollow noopener noreferrer" target="_blank">
+          <a href={projectLinkLive} rel="nofollow noopener noreferrer" target="_blank">
             Filmoteka
           </a>{' '}
           you will find: information about your favorite movies, new movies in theaters, list of Top
@@ -35,9 +34,8 @@ const FilmotekaModal = ({
           <li>SASS</li>
         </ul>
         <InfoLinks
-          activeIndex={activeIndex}
-          projectLinksGit={projectLinksGit}
-          projectLinksLive={projectLinksLive}
+          projectLinkGit={projectLinkGit}
+          projectLinkLive={projectLinkLive}
         />
       </div>
     </Modal>

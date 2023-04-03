@@ -1,24 +1,23 @@
 import React from 'react';
 import Modal from '../../common/Modal';
-import s from '../Portfolio.module.scss';
 import InfoLinks from './InfoLinks';
+import s from '../Portfolio.module.scss';
 
 const PrestigeModal = ({
   modalShow,
   setModalShow,
-  activeIndex,
-  projectLinksGit,
-  projectLinksLive,
   setIsModalOpen,
-  projectTitles
+  projectLinkGit,
+  projectLinkLive,
+  projectTitle
 }) => {
   return (
     <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
-        <h1 className={s.modalTitle}>{projectTitles[3]}</h1>
+        <h1 className={s.modalTitle}>{projectTitle}</h1>
         <p className={s.modalText}>
           At{' '}
-          <a href={projectLinksLive[3]} rel="nofollow noopener noreferrer" target="_blank">
+          <a href={projectLinkLive} rel="nofollow noopener noreferrer" target="_blank">
             PRESTIGE
           </a>{' '}
           provides each customer with various trendy items at affordable prices. Customers have the
@@ -31,9 +30,8 @@ const PrestigeModal = ({
           <li>SASS</li>
         </ul>
         <InfoLinks
-          activeIndex={activeIndex}
-          projectLinksGit={projectLinksGit}
-          projectLinksLive={projectLinksLive}
+          projectLinkGit={projectLinkGit}
+          projectLinkLive={projectLinkLive}
         />
       </div>
     </Modal>

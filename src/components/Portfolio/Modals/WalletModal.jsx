@@ -1,23 +1,22 @@
 import React from 'react';
 import Modal from '../../common/Modal';
-import s from '../Portfolio.module.scss';
 import InfoLinks from './InfoLinks';
+import s from '../Portfolio.module.scss';
 
 const WalletModal = ({
   modalShow,
   setModalShow,
-  activeIndex,
-  projectLinksGit,
-  projectLinksLive,
   setIsModalOpen,
-  projectTitles
+  projectLinkGit,
+  projectLinkLive,
+  projectTitle
 }) => {
   return (
     <Modal modalShow={modalShow} setModalShow={setModalShow} setIsModalOpen={setIsModalOpen}>
       <div className={s.modalContainer}>
-        <h1 className={s.modalTitle}>{projectTitles[1]}</h1>
+        <h1 className={s.modalTitle}>{projectTitle}</h1>
         <p className={s.modalText}>
-          <a href={projectLinksLive[1]} rel="nofollow noopener noreferrer" target="_blank">
+          <a href={projectLinkLive} rel="nofollow noopener noreferrer" target="_blank">
             Wallet
           </a>{' '}
           is a powerful finance manager that offer you a 360° view of your finances. We combine
@@ -32,9 +31,8 @@ const WalletModal = ({
           <li>Axios</li>
         </ul>
         <InfoLinks
-          activeIndex={activeIndex}
-          projectLinksGit={projectLinksGit}
-          projectLinksLive={projectLinksLive}
+          projectLinkGit={projectLinkGit}
+          projectLinkLive={projectLinkLive}
         />
       </div>
     </Modal>
