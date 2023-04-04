@@ -277,6 +277,18 @@
   }
 }
 
+.toolsNextJs {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(122,122,122,1) 60%, rgba(0,0,0,1) 81%);
+
+  @media (max-width: 890px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 .toolsItem:hover:before,
 .toolsItem:hover:after {
   transform: scaleY(1);

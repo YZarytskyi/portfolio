@@ -85,18 +85,20 @@ const Tabs = () => {
             </li>
             <li className={s.toolsItem}>
               <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-git`}></use>
-                </svg>
-                Git
+                <div className={s.toolsNextJs}>
+                  <svg className={s.toolsIcon}>
+                    <use href={`${sprite}#icon-next`}></use>
+                  </svg>
+                </div>
+                Next.js
               </div>
             </li>
             <li className={s.toolsItem}>
               <div className={s.toolsItemInner}>
                 <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-sass`}></use>
+                  <use href={`${sprite}#icon-git`}></use>
                 </svg>
-                Sass
+                Git
               </div>
             </li>
           </ul>
