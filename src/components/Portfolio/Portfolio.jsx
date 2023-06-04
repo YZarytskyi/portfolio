@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
+
 import s from './Portfolio.module.scss';
+
 import crypto1 from 'assets/crypto1.jpg';
 import crypto2 from 'assets/crypto2.jpg';
 import jazzRender from 'assets/jazzRender.png';

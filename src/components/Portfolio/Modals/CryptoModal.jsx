@@ -1,7 +1,9 @@
 import React from 'react';
+
 import Modal from '../../common/Modal';
-import s from '../Portfolio.module.scss';
 import InfoLinks from './InfoLinks';
+
+import s from '../Portfolio.module.scss';
 
 const CryptoModal = ({
   modalShow,

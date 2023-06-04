@@ -1,5 +1,7 @@
 import React from 'react';
+
 import s from './FixContacts.module.scss';
+
 import sprite from '../../assets/icons.svg';
 
 const FixContacts = () => {
