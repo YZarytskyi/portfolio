@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.f849b0dd.css",
-    "main.js": "/portfolio/static/js/main.26f8ee69.js",
+    "main.css": "/portfolio/static/css/main.94fa810c.css",
+    "main.js": "/portfolio/static/js/main.43637d0b.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
     "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.8cb307583cc6df6c5f85.pdf",
     "static/media/jazzRender2.png": "/portfolio/static/media/jazzRender2.a69e49e998472fa0e3f0.png",
@@ -18,14 +18,14 @@
     "static/media/filmoteka2.jpg": "/portfolio/static/media/filmoteka2.b5cdbd45a121cc5344a2.jpg",
     "static/media/crypto2.jpg": "/portfolio/static/media/crypto2.8c3643368b7b67c4c030.jpg",
     "static/media/iceCream2.jpg": "/portfolio/static/media/iceCream2.8ea135df408ca1760a03.jpg",
-    "static/media/icons.svg": "/portfolio/static/media/icons.2397dab97bdd358c998617cfb99e6f87.svg",
+    "static/media/icons.svg": "/portfolio/static/media/icons.72f31c5660f9e01e2c2c6c5660c92215.svg",
     "static/media/eshop2.jpg": "/portfolio/static/media/eshop2.2657928136f6f728699f.jpg",
     "index.html": "/portfolio/index.html",
-    "main.f849b0dd.css.map": "/portfolio/static/css/main.f849b0dd.css.map",
-    "main.26f8ee69.js.map": "/portfolio/static/js/main.26f8ee69.js.map"
+    "main.94fa810c.css.map": "/portfolio/static/css/main.94fa810c.css.map",
+    "main.43637d0b.js.map": "/portfolio/static/js/main.43637d0b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f849b0dd.css",
-    "static/js/main.26f8ee69.js"
+    "static/css/main.94fa810c.css",
+    "static/js/main.43637d0b.js"
   ]
 }
