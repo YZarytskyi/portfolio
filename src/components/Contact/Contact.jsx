@@ -21,8 +21,7 @@ const Contact = () => {
         </div>
 
         <p className={s.text}>
-          I’m currently looking for new opportunities and my inbox is always open. Whether you have
-          a question or just want to say hi, I’ll try my best to get back to you!
+        At this time, I am not actively seeking new opportunities. However, I want to assure you that my inbox is always open and I welcome your messages. Whether you have a question or simply want to say hello, I will make every effort to respond to you as promptly as possible.
         </p>
         <a
           href="mailto: zarytskyi222@gmail.com"
