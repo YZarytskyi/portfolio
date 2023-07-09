@@ -178,10 +178,11 @@
 
 .swiperWrapper {
   position: absolute;
-  top: 10.5%;
+  margin: 0 !important;
+  top: 10%;
   left: 50%;
   width: 66%;
-  height: 91.3%;
+  height: 83.6%;
   border-radius: 3px 3px 23px 23px;
   cursor: pointer;
   overflow: hidden;
@@ -349,6 +350,7 @@
   align-items: center;
   font-size: 1.8rem;
   line-height: 1.4;
+
   @media (max-width: 1199px) {
     font-size: 1.6rem;
     line-height: 1.35;
@@ -362,6 +364,7 @@
 .modalLinksContainer {
   display: flex;
   gap: 4rem;
+
   @media (max-width: 1199px) {
     gap: 3rem;
   }
@@ -376,6 +379,7 @@
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 600;
+
   @media (max-width: 479px) {
     margin-bottom: 2rem;
     font-size: 2.5rem;
@@ -421,6 +425,7 @@
   color: #88adff;
   font-size: 1.5rem;
   letter-spacing: 0.06em;
+
   @media (max-width: 479px) {
     margin-bottom: 3rem;
     column-gap: 1.3rem;
