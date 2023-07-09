@@ -1,5 +1,7 @@
-import s from "./Modal.module.scss";
 import React, { useRef } from "react";
+
+import s from "./Modal.module.scss";
+
 import sprite from "../../assets/icons.svg";
 
 const Modal = ({ children, modalShow, setModalShow, setIsModalOpen }) => {

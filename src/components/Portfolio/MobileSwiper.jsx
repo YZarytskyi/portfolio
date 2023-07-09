@@ -1,6 +1,7 @@
-import s from './Portfolio.module.scss';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import s from './Portfolio.module.scss';
 
 const MobileSwiper = ({setActiveIndex, onClickModalOpen, mobileImages, device, MOBILE}) => {
   const onSlideChangeSwiper = (e) => {

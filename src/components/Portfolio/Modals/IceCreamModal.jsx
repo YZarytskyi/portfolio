@@ -1,6 +1,8 @@
 import React from 'react';
+
 import Modal from '../../common/Modal';
 import InfoLinks from './InfoLinks';
+
 import s from '../Portfolio.module.scss';
 
 const IceCreamModal = ({

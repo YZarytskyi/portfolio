@@ -1,4 +1,5 @@
 import React from 'react';
+
 import s from '../Portfolio.module.scss';
 
 const InfoLinks = ({projectLinkGit, projectLinkLive}) => {

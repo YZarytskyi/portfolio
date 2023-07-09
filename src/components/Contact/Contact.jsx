@@ -1,6 +1,7 @@
 import React from 'react';
-import s from './Contact.module.scss';
 import Tilt from 'react-parallax-tilt';
+
+import s from './Contact.module.scss';
 
 const Contact = () => {
   return (

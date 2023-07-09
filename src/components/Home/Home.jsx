@@ -1,6 +1,7 @@
 import React from 'react';
-import s from './Home.module.scss';
 import Tilt from 'react-parallax-tilt';
+
+import s from './Home.module.scss';
 
 const Home = () => {
   const QTY = 130;

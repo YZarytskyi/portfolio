@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CryptoModal from './CryptoModal';
 import JazzRenderModal from './JazzRenderModal';
 import WalletModal from './WalletModal';

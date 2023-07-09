@@ -1,6 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import s from './About.module.scss';
+
 import sprite from '../../assets/icons.svg';
 import goIt from '../../assets/goIt.png';
 
@@ -16,7 +17,6 @@ const Tabs = () => {
       <ul className={s.tabsList}>
         <li>
           <button
-            href=""
             className={`${s.tab} ${tab === 1 ? s.tabCurrent : ''}`}
             onClick={() => toggleTab(1)}>
             Tooling

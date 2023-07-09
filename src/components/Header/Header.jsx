@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+
+import s from './Header.module.scss';
+
 import resume from '../../assets/Yurii_Zarytskyi_Front-end_Developer_CV.pdf';
 import sprite from '../../assets/icons.svg';
-import s from './Header.module.scss';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,8 +1,11 @@
 import React from 'react';
-import s from './About.module.scss';
-import me from '../../assets/Zarytskyi.png';
 import Tilt from 'react-parallax-tilt';
+
 import Tabs from './Tabs';
+
+import s from './About.module.scss';
+
+import YuriiZarytskyi from '../../assets/Zarytskyi.png';
 
 const About = () => {
   return (
@@ -25,14 +28,12 @@ const About = () => {
 
         <div className={s.textImgContainer}>
           <p className={s.text}>
-            All of my knowledge has been gained with hundreds hours of learning and practice daily. It gives me a
-            strong understanding of the programming process which allows me to provide better
-            solutions and write a clear, readable and supportable code.
+          Through dedicated daily practice and continuous learning, I have acquired a profound understanding of the programming process. This proficiency empowers me to deliver effective solutions and craft code that is clear, readable, and supportable. With each passing day, my experience grows, enhancing my skills and expanding my knowledge. As a result, I approach complex tasks with increased confidence and efficiency.
           </p>
           <div className={s.circleImgContainer}>
             <div className={s.circle}></div>
             <div className={s.photoContainer}>
-              <img src={me} alt="Yurii Zarytskyi" className={s.photo} />
+              <img src={YuriiZarytskyi} alt="Yurii Zarytskyi" className={s.photo} />
             </div>
           </div>
         </div>
