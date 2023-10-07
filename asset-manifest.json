@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.49c80c0f.css",
-    "main.js": "/portfolio/static/js/main.58b7506f.js",
+    "main.css": "/portfolio/static/css/main.16019ee0.css",
+    "main.js": "/portfolio/static/js/main.6f59a356.js",
     "static/media/iphone.png": "/portfolio/static/media/iphone.c525e2bbfaea3e74b5bb.png",
-    "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.8cb307583cc6df6c5f85.pdf",
+    "static/media/Yurii_Zarytskyi_Front-end_Developer_CV.pdf": "/portfolio/static/media/Yurii_Zarytskyi_Front-end_Developer_CV.b3305a2ba5728b194245.pdf",
     "static/media/jazzRender2.png": "/portfolio/static/media/jazzRender2.a69e49e998472fa0e3f0.png",
     "static/media/Zarytskyi.png": "/portfolio/static/media/Zarytskyi.ae63eef70c359f0e048f.png",
     "static/media/wallet.png": "/portfolio/static/media/wallet.0c2deffc23ac846bdc49.png",
@@ -21,11 +21,11 @@
     "static/media/icons.svg": "/portfolio/static/media/icons.72f31c5660f9e01e2c2c6c5660c92215.svg",
     "static/media/eshop2.jpg": "/portfolio/static/media/eshop2.2657928136f6f728699f.jpg",
     "index.html": "/portfolio/index.html",
-    "main.49c80c0f.css.map": "/portfolio/static/css/main.49c80c0f.css.map",
-    "main.58b7506f.js.map": "/portfolio/static/js/main.58b7506f.js.map"
+    "main.16019ee0.css.map": "/portfolio/static/css/main.16019ee0.css.map",
+    "main.6f59a356.js.map": "/portfolio/static/js/main.6f59a356.js.map"
   },
   "entrypoints": [
-    "static/css/main.49c80c0f.css",
-    "static/js/main.58b7506f.js"
+    "static/css/main.16019ee0.css",
+    "static/js/main.6f59a356.js"
   ]
 }
