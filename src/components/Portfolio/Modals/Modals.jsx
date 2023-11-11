@@ -6,9 +6,12 @@ import WalletModal from './WalletModal';
 import PrestigeModal from './PrestigeModal';
 import FilmotekaModal from './FilmotekaModal';
 import IceCreamModal from './IceCreamModal';
+import SchoolHackModal from './SchoolHackModal';
 
 const Modals = ({
   setIsModalOpen,
+  modalShowSchoolHack,
+  setModalShowSchoolHack,
   modalShowCrypto,
   setModalShowCrypto,
   modalJazzRender,
@@ -23,8 +26,17 @@ const Modals = ({
   setModalShowIceCream,
   projectTitles
 }) => {
-  const modalsList = [CryptoModal, JazzRenderModal, WalletModal, PrestigeModal, FilmotekaModal, IceCreamModal];
+  const modalsList = [
+    SchoolHackModal,
+    CryptoModal,
+    JazzRenderModal,
+    WalletModal,
+    PrestigeModal,
+    FilmotekaModal,
+    IceCreamModal
+  ];
   const states = [
+    modalShowSchoolHack,
     modalShowCrypto,
     modalJazzRender,
     modalShowWallet,
@@ -33,6 +45,7 @@ const Modals = ({
     modalShowIceCream
   ];
   const setStates = [
+    setModalShowSchoolHack,
     setModalShowCrypto,
     setModalJazzRender,
     setModalShowWallet,
@@ -41,6 +54,7 @@ const Modals = ({
     setModalShowIceCream
   ];
   const projectLinksGit = [
+    'https://app.schoolhack.ai/',
     'https://github.com/YZarytskyi/finance-crypto',
     'https://github.com/YZarytskyi/jazz-render',
     'https://github.com/YZarytskyi/wallet',
@@ -49,6 +63,7 @@ const Modals = ({
     'https://github.com/YZarytskyi/ice-cream-team-project'
   ];
   const projectLinksLive = [
+    '',
     'https://yzarytskyi.github.io/finance-crypto/',
     'https://jazz-render-xl8t.vercel.app',
     'https://yzarytskyi.github.io/wallet/',

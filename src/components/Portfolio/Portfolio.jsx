@@ -1,7 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
+import Modals from './Modals/Modals';
+import MobileSwiper from './MobileSwiper';
 
 import s from './Portfolio.module.scss';
-
+import schoolHack from 'assets/schoolHack.png';
+import schoolHack2 from 'assets/schoolHack2.png';
 import crypto1 from 'assets/crypto1.jpg';
 import crypto2 from 'assets/crypto2.jpg';
 import jazzRender from 'assets/jazzRender.png';
@@ -14,20 +18,27 @@ import filmoteka from 'assets/filmoteka.jpg';
 import filmoteka2 from 'assets/filmoteka2.jpg';
 import iceCream from 'assets/iceCream.jpg';
 import iceCream2 from 'assets/iceCream2.jpg';
-import Modals from './Modals/Modals';
-import MobileSwiper from './MobileSwiper';
 
 const DESKTOP = 'desktop';
 const MOBILE = 'mobile';
-const desktopImages = [crypto1, jazzRender, wallet, eShop, filmoteka, iceCream];
-const mobileImages = [crypto2, jazzRender2, wallet2, eShop2, filmoteka2, iceCream2];
-const projectTitles = ['Crypto', 'Jazz Render', 'Wallet', 'Prestige', 'Filmoteka', 'Ice-cream'];
+const desktopImages = [schoolHack, crypto1, jazzRender, wallet, eShop, filmoteka, iceCream];
+const mobileImages = [schoolHack2, crypto2, jazzRender2, wallet2, eShop2, filmoteka2, iceCream2];
+const projectTitles = [
+  'SchoolHack AI',
+  'Crypto',
+  'Jazz Render',
+  'Wallet',
+  'Prestige',
+  'Filmoteka',
+  'Ice-cream'
+];
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
   const [slideChangeClick, setSlideChangeClick] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalShowSchoolHack, setModalShowSchoolHack] = useState(false);
   const [modalShowCrypto, setModalShowCrypto] = useState(false);
   const [modalJazzRender, setModalJazzRender] = useState(false);
   const [modalShowWallet, setModalShowWallet] = useState(false);
@@ -40,6 +51,7 @@ const Portfolio = () => {
   const refImage = useRef(null);
 
   const modalsSetState = [
+    setModalShowSchoolHack,
     setModalShowCrypto,
     setModalJazzRender,
     setModalShowWallet,
@@ -53,7 +65,9 @@ const Portfolio = () => {
 
   useEffect(() => {
     const handleResize = () => setDevice(window.innerWidth >= 1200 ? DESKTOP : MOBILE);
+
     handleResize();
+
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -84,8 +98,7 @@ const Portfolio = () => {
       if (!isImgHovered && !slideChangeClick && !isModalOpen) {
         interval = setInterval(() => {
           setActiveIndex((currentIndex) => {
-            const nextIndex = currentIndex === desktopImages.length - 1 ? 0 : currentIndex + 1;
-            return nextIndex;
+            return currentIndex === desktopImages.length - 1 ? 0 : currentIndex + 1;
           });
         }, 7000);
       }
@@ -129,6 +142,7 @@ const Portfolio = () => {
   function onClickSlideChange(e) {
     const targetIndex = e.target.dataset.index;
     setSlideChangeClick(targetIndex);
+
     if (device === MOBILE) {
       const swiper = document.querySelector('.swiper').swiper;
       swiper?.slideToLoop(Number(targetIndex), 500);
@@ -219,6 +233,8 @@ const Portfolio = () => {
       <Modals
         setIsModalOpen={setIsModalOpen}
         projectTitles={projectTitles}
+        modalShowSchoolHack={modalShowSchoolHack}
+        setModalShowSchoolHack={setModalShowSchoolHack}
         modalShowCrypto={modalShowCrypto}
         setModalShowCrypto={setModalShowCrypto}
         modalJazzRender={modalJazzRender}
