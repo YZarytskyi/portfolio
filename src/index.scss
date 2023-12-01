@@ -1,0 +1,147 @@
+@import "./reset.scss";
+@import "./vars.scss";
+
+html {
+  font-size: 10px;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: $bg-color-secondary;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: $color-main;
+  font-size: 1.6rem;
+  font-family: 'Titillium Web', sans-serif;
+  letter-spacing: 0.06em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blockScroll {
+  overflow: hidden;
+  margin-right: 8px;
+
+  @media screen and (max-width: 767px) {
+    margin-right: 0;
+  }
+  
+  & .FixContacts_fixEmail__ZxL4J {
+    right: calc(5% + 8px);
+  }
+
+  & .Header_headerContainer__GTRXA {
+    padding-right: 8px;
+    width: calc(90% - 8px);
+    @media screen and (max-width: 767px) {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+::-webkit-scrollbar-track {
+  background: #080d16;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(61, 59, 82);
+  border-radius: 0.4rem;
+}
+
+a {
+  text-decoration: none;
+  color: $color-main;
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  color: $color-main;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.tilt {
+  display: block;
+  @media (max-width: 1019px) {
+    display: none;
+  }
+}
+
+.tiltMobile {
+  display: none;
+  @media (max-width: 1019px) {
+    display: block;
+  }
+}
+
+.title {
+  padding: 0 0 2rem 0;
+  cursor: default;
+  text-align: center;
+  line-height: 2;
+  font-size: 4rem;
+  font-weight: 500;
+
+  @media (max-width: 1199px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 479px) {
+    font-size: 3rem;
+  }
+
+  &::after {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 400px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: $color-accent;
+
+    @media (max-width: 1199px) {
+      width: 350px;
+    }
+    @media (max-width: 767px) {
+      width: 300px;
+    }
+    @media (max-width: 479px) {
+      width: 250px;
+    }
+  }
+}
