@@ -30,6 +30,10 @@
   }
 }
 
+:global(.blockScroll) .fixEmail {
+  right: calc(5% + 7px);
+}
+
 .fixContacts {
   position: fixed;
   bottom: 0;

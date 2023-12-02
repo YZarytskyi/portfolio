@@ -28,6 +28,15 @@ header {
   }
 }
 
+:global(.blockScroll) .headerContainer {
+  padding-right: 8px;
+  width: calc(90% - 8px);
+  @media screen and (max-width: 767px) {
+    padding: 0;
+    width: 100%;
+  }
+}
+
 .logo {
   margin-right: auto;
   width: 5rem;
@@ -51,6 +60,10 @@ header {
     font-size: 1.2rem;
     font-weight: 500;
     box-shadow: 0 0 5px $color-accent;
+  }
+
+  &:hover {
+    animation: glow 1s infinite;
   }
 }
 

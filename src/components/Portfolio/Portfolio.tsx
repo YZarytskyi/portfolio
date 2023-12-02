@@ -1,8 +1,11 @@
 import { clsx } from "clsx";
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
 
+import { DESKTOP, MOBILE, PROJECT_TITLES } from "../../constants";
 import MobileSwiper from "./MobileSwiper";
-import { Modals } from "./Modals/Modals.tsx";
+import ModalProject from "./ModalProject.tsx";
+
+import { ProjectTitleType } from "../../types";
 
 import styles from "./Portfolio.module.scss";
 
@@ -17,40 +20,20 @@ import schoolHack from "../../assets/schoolHack.jpg";
 import wallet2 from "../../assets/wallet2.png";
 import wallet from "../../assets/wallet.png";
 
-const DESKTOP = "desktop";
-const MOBILE = "mobile";
 const desktopImages = [schoolHack, crypto1, jazzRender, wallet, filmoteka];
 const mobileImages = [schoolHack2, crypto2, jazzRender2, wallet2, filmoteka2];
-const projectTitles = [
-  "SchoolHack AI",
-  "Crypto",
-  "Jazz Render",
-  "Wallet",
-  "Filmoteka",
-];
 
 export const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isImgHovered, setIsImgHovered] = useState(false);
   const [slideChangeClick, setSlideChangeClick] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalShowSchoolHack, setModalShowSchoolHack] = useState(false);
-  const [modalShowCrypto, setModalShowCrypto] = useState(false);
-  const [modalJazzRender, setModalJazzRender] = useState(false);
-  const [modalShowWallet, setModalShowWallet] = useState(false);
-  const [modalShowFilmoteka, setModalShowFilmoteka] = useState(false);
-  const [device, setDevice] = useState<string>("");
+  const [device, setDevice] = useState("");
+  const [currentModal, setCurrentModal] = useState<ProjectTitleType | null>(
+    null,
+  );
 
   const desktopWrapperRef = useRef<HTMLDivElement>(null);
   const desktopImageWrapperRef = useRef<HTMLDivElement>(null);
-
-  const modalsSetState = [
-    setModalShowSchoolHack,
-    setModalShowCrypto,
-    setModalJazzRender,
-    setModalShowWallet,
-    setModalShowFilmoteka,
-  ];
 
   const prevImgIndex = activeIndex ? activeIndex - 1 : desktopImages.length - 1;
   const nextImgIndex =
@@ -92,7 +75,7 @@ export const Portfolio = () => {
         setActiveIndex(Number(slideChangeClick));
         setSlideChangeClick("");
       }
-      if (!isImgHovered && !slideChangeClick && !isModalOpen) {
+      if (!isImgHovered && !slideChangeClick && !currentModal) {
         interval = setInterval(() => {
           setActiveIndex((currentIndex) => {
             return currentIndex === desktopImages.length - 1
@@ -102,8 +85,9 @@ export const Portfolio = () => {
         }, 7000);
       }
     }
+
     return () => clearInterval(interval);
-  }, [isImgHovered, slideChangeClick, isModalOpen, device]);
+  }, [isImgHovered, slideChangeClick, currentModal, device]);
 
   useEffect(() => {
     if (device === MOBILE) {
@@ -161,16 +145,17 @@ export const Portfolio = () => {
   };
 
   function onClickModalOpen() {
-    modalsSetState[activeIndex](true);
-    setIsModalOpen(true);
+    setCurrentModal(PROJECT_TITLES[activeIndex]);
     document.body.classList.add("blockScroll");
   }
 
   return (
     <>
-      <section id="portfolio" className={styles.portfolio}>
+      <section id="projects" className={styles.portfolio}>
         <div className={styles.container}>
-          <h2 className={clsx("title", styles.titlePortfolio)}>Portfolio</h2>
+          <h2 className={clsx("title", styles.titlePortfolio)}>
+            Project Experience
+          </h2>
           <div className={styles.presentation}>
             <div className={styles.iMac} ref={desktopImageWrapperRef}>
               <div className={styles.iMacWrapper} ref={desktopWrapperRef}></div>
@@ -241,8 +226,8 @@ export const Portfolio = () => {
               role="button"
               onClick={() => onClickModalOpen()}
             >
-              <span className={styles.btn__circle}></span>
-              <span className={styles.btn__whiteCircle}>
+              <span className={styles.btnCircle} />
+              <span className={styles.btnWhiteCircle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   id="icon-arrow-right"
@@ -254,15 +239,16 @@ export const Portfolio = () => {
               <button className={styles.btn}>Discover the project</button>
             </div>
           </div>
+
           <ul className={styles.projectList} onClick={onClickSlideChange}>
-            {projectTitles.map((title, i) => (
-              <li className={styles.projectItem} key={i}>
+            {PROJECT_TITLES.map((title, index) => (
+              <li className={styles.projectItem} key={index}>
                 <button
                   className={clsx(
                     styles.projectBtn,
-                    i === activeIndex && styles.activeProject,
+                    index === activeIndex && styles.activeProject,
                   )}
-                  data-index={i}
+                  data-index={index}
                 >
                   {title}
                 </button>
@@ -271,19 +257,10 @@ export const Portfolio = () => {
           </ul>
         </div>
       </section>
-      <Modals
-        setIsModalOpen={setIsModalOpen}
-        projectTitles={projectTitles}
-        modalShowSchoolHack={modalShowSchoolHack}
-        setModalShowSchoolHack={setModalShowSchoolHack}
-        modalShowCrypto={modalShowCrypto}
-        setModalShowCrypto={setModalShowCrypto}
-        modalJazzRender={modalJazzRender}
-        setModalJazzRender={setModalJazzRender}
-        modalShowWallet={modalShowWallet}
-        setModalShowWallet={setModalShowWallet}
-        modalShowFilmoteka={modalShowFilmoteka}
-        setModalShowFilmoteka={setModalShowFilmoteka}
+
+      <ModalProject
+        currentModal={currentModal}
+        setCurrentModal={setCurrentModal}
       />
     </>
   );

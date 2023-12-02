@@ -1,22 +1,22 @@
 import { clsx } from "clsx";
 import { Dispatch, MouseEventHandler, ReactNode, SetStateAction } from "react";
 
+import { ProjectTitleType } from "../../../types";
+
 import styles from "./Modal.module.scss";
 
 import sprite from "../../../assets/icons.svg";
 
 interface ModalProps {
   children: ReactNode;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-  isModalShown: boolean;
-  setIsModalShown: Dispatch<SetStateAction<boolean>>;
+  isModalOpen: boolean;
+  setCurrentModal: Dispatch<SetStateAction<ProjectTitleType | null>>;
 }
 
 export const Modal = ({
   children,
-  isModalShown,
-  setIsModalShown,
-  setIsModalOpen,
+  isModalOpen,
+  setCurrentModal,
 }: ModalProps) => {
   const handleCloseModal: MouseEventHandler = (e) => {
     if (e.target === e.currentTarget) {
@@ -25,14 +25,13 @@ export const Modal = ({
   };
 
   function closeModal() {
-    setIsModalShown(false);
-    setIsModalOpen(false);
+    setCurrentModal(null);
     document.body.classList.remove("blockScroll");
   }
 
   return (
     <div
-      className={clsx(styles.backdrop, !isModalShown && styles.isHidden)}
+      className={clsx(styles.backdrop, !isModalOpen && styles.isHidden)}
       onClick={(e) => handleCloseModal(e)}
     >
       <div className={styles.modal}>

@@ -31,19 +31,6 @@ body {
   @media screen and (max-width: 767px) {
     margin-right: 0;
   }
-  
-  & .FixContacts_fixEmail__ZxL4J {
-    right: calc(5% + 8px);
-  }
-
-  & .Header_headerContainer__GTRXA {
-    padding-right: 8px;
-    width: calc(90% - 8px);
-    @media screen and (max-width: 767px) {
-      padding: 0;
-      width: 100%;
-    }
-  }
 }
 
 ::-webkit-scrollbar {

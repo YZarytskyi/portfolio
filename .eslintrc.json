@@ -13,8 +13,7 @@
     {
       "files": [
         "*.md"
-      ],
-      "processor": "markdown/markdown"
+      ]
     }
   ],
   "parser": "@typescript-eslint/parser",

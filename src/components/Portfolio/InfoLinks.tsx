@@ -1,19 +1,19 @@
-import s from "../Portfolio.module.scss";
+import styles from "./InfoLinks.module.scss";
 
 interface InfoLinksProps {
-  projectLinkGit: string;
-  projectLinkLive?: string;
+  projectLinkGit: string | undefined;
+  projectLinkLive: string | undefined;
 }
 
 const InfoLinks = ({ projectLinkGit, projectLinkLive }: InfoLinksProps) => {
   return (
-    <div className={s.modalLinksContainer}>
+    <div className={styles.modalLinksContainer}>
       {projectLinkGit && (
         <a
           href={projectLinkGit}
           rel="nofollow noopener noreferrer"
           target="_blank"
-          className={s.modalProjectLink}
+          className={styles.modalProjectLink}
         >
           GitHub
         </a>
@@ -24,7 +24,7 @@ const InfoLinks = ({ projectLinkGit, projectLinkLive }: InfoLinksProps) => {
           href={projectLinkLive}
           rel="nofollow noopener noreferrer"
           target="_blank"
-          className={s.modalProjectLink}
+          className={styles.modalProjectLink}
         >
           Live
         </a>

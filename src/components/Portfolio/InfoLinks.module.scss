@@ -1,0 +1,35 @@
+@import '../../vars.scss';
+
+.modalLinksContainer {
+  display: flex;
+  gap: 4rem;
+
+  @media (max-width: 1199px) {
+    gap: 3rem;
+  }
+}
+
+.modalProjectLink {
+  min-width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid $color-accent;
+  border-radius: 4px;
+  font-size: 1.6rem;
+
+  @media (max-width: 767px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 479px) {
+    padding: 0.5rem 1.6rem;
+  }
+
+  &:hover {
+    color: $color-main;
+    animation: glow 1s infinite;
+  }
+}
