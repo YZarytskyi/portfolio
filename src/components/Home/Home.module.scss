@@ -35,11 +35,29 @@
 
 .textContainer {
   padding: 6rem 6rem 2rem;
+  font-size: 1.9rem;
+
+  @media (max-width: 1199px) {
+    padding: 6rem 5rem 2rem 5rem;
+    font-size: 1.8rem;
+    line-height: 2.1;
+  }
+  @media (max-width: 767px) {
+    padding: 6rem 6rem 2rem;
+    font-size: 1.5rem;
+    line-height: 2;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.4rem;
+    line-height: 1.7;
+  }
+  @media (max-width: 340px) {
+    padding: 6rem 4rem 2rem 4rem;
+  }
 }
 
 .greeting {
   display: block;
-  font-size: 1.9rem;
   margin-bottom: 10px;
 
   @keyframes hello {
@@ -126,21 +144,16 @@
   cursor: default;
 
   @media (max-width: 1199px) {
-    padding: 6rem 5rem 2rem 5rem;
     font-size: 1.8rem;
     line-height: 2.1;
   }
   @media (max-width: 767px) {
-    padding: 6rem 6rem 2rem;
     font-size: 1.5rem;
     line-height: 2;
   }
   @media (max-width: 400px) {
     font-size: 1.4rem;
     line-height: 1.7;
-  }
-  @media (max-width: 340px) {
-    padding: 6rem 4rem 2rem 4rem;
   }
 }
 

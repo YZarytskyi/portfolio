@@ -35,13 +35,13 @@ export const Home = () => {
           </AnimateInView>
         </Tilt>
 
-        <div className="tiltMobile">
+        <div className={clsx("tiltMobile", style.textContainer)}>
+          <p className={style.greeting}>
+            <span className={style.emojiHi}>✌🏻</span>Hi, my name is
+          </p>
+          <p className={style.name}>Yurii Zarytskyi</p>
+          <p className={style.myPosition}>I’m a Frontend Developer</p>
           <p className={style.homeText}>
-            <span>
-              <span className={style.emojiHi}>✌🏻</span>Hi, my name is
-            </span>
-            <span>Yurii Zarytskyi</span>
-            <span>I’m a Frontend Developer</span>
             Let’s build a better digital world together
           </p>
         </div>
@@ -58,7 +58,7 @@ export const Home = () => {
           .fill(0)
           .map((_, index) => (
             <div key={index} className={style.circleContainer}>
-              <div className={style.circle}></div>
+              <div className={style.circle} />
             </div>
           ))}
       </div>
