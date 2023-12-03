@@ -1,11 +1,13 @@
 import Tilt from "react-parallax-tilt";
 
-import styles from "./Contact.module.scss";
+import AnimateInView from "../common/AnimateOnView/AnimateInView.tsx";
+
+import style from "./Contact.module.scss";
 
 export const Contact = () => {
   return (
-    <section id="contact" className={styles.contact}>
-      <div className={styles.container}>
+    <section id="contact" className={style.contact}>
+      <div className={style.container}>
         <Tilt
           tiltMaxAngleX={20}
           tiltMaxAngleY={11}
@@ -14,26 +16,32 @@ export const Contact = () => {
           transitionSpeed={3000}
           className="tilt"
         >
-          <h2 className="title">Contact</h2>
+          <AnimateInView>
+            <h2 className="title">Contact</h2>
+          </AnimateInView>
         </Tilt>
 
         <div className="tiltMobile">
           <h2 className="title">Contact</h2>
         </div>
 
-        <p className={styles.text}>
-          My inbox is always open and I welcome your messages. Whether you have
-          a question or simply want to say hello, I will make every effort to
-          respond to you as promptly as possible.
-        </p>
-        <a
-          href="mailto: zarytskyi222@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          className={styles.link}
-        >
-          Contact Me
-        </a>
+        <AnimateInView delay={0.15}>
+          <p className={style.text}>
+            My inbox is always open and I welcome your messages. Whether you
+            have a question or simply want to say hello, I will make every
+            effort to respond to you as promptly as possible.
+          </p>
+        </AnimateInView>
+        <AnimateInView delay={0.2} overflow="visible">
+          <a
+            href="mailto: zarytskyi222@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={style.link}
+          >
+            Contact Me
+          </a>
+        </AnimateInView>
       </div>
     </section>
   );

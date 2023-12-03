@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-import s from "./About.module.scss";
+import { TOOLS } from "../../constants";
+import AnimateInView from "../common/AnimateOnView/AnimateInView.tsx";
+import ToolItem from "./ToolItem.tsx";
+
+import style from "./About.module.scss";
 
 import goIt from "../../assets/goIt.png";
 import sprite from "../../assets/icons.svg";
@@ -13,124 +17,74 @@ const Tabs = () => {
   };
 
   return (
-    <div className={s.tabs}>
-      <ul className={s.tabsList}>
-        <li>
-          <button
-            className={`${s.tab} ${currentTab === 1 ? s.tabCurrent : ""}`}
-            onClick={() => toggleTab(1)}
-          >
-            Tooling
-          </button>
-        </li>
-        <li>
-          <button
-            className={`${s.tab} ${currentTab === 2 ? s.tabCurrent : ""}`}
-            onClick={() => toggleTab(2)}
-          >
-            Certification
-          </button>
-        </li>
-      </ul>
+    <div className={style.tabs}>
+      <AnimateInView delay={0.2}>
+        <ul className={style.tabsList}>
+          <li>
+            <button
+              className={`${style.tab} ${
+                currentTab === 1 ? style.tabCurrent : ""
+              }`}
+              onClick={() => toggleTab(1)}
+            >
+              Tooling
+            </button>
+          </li>
+          <li>
+            <button
+              className={`${style.tab} ${
+                currentTab === 2 ? style.tabCurrent : ""
+              }`}
+              onClick={() => toggleTab(2)}
+            >
+              Certification
+            </button>
+          </li>
+        </ul>
+      </AnimateInView>
 
-      <div className={s.tabContentContainer}>
+      <div className={style.tabContentContainer}>
+        <AnimateInView delay={0.25}>
+          <div
+            className={`${style.tabContent} ${
+              currentTab === 1 ? style.tabContentCurrent : ""
+            }`}
+          >
+            <ul className={style.toolsList}>
+              {TOOLS.map((tool) => (
+                <ToolItem key={tool.name} name={tool.name} icon={tool.icon} />
+              ))}
+            </ul>
+          </div>
+        </AnimateInView>
+
         <div
-          className={`${s.tabContent} ${
-            currentTab === 1 ? s.tabContentCurrent : ""
+          className={`${style.tabContent} ${
+            currentTab === 2 ? style.tabContentCurrent : ""
           }`}
         >
-          <ul className={s.toolsList}>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-html`}></use>
-                </svg>
-                HTML 5
-              </div>
-            </li>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-css`}></use>
-                </svg>
-                CSS 3
-              </div>
-            </li>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-js`}></use>
-                </svg>
-                JavaScript
-              </div>
-            </li>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-typescript`}></use>
-                </svg>
-                TypeScript
-              </div>
-            </li>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-react`}></use>
-                </svg>
-                React
-              </div>
-            </li>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-redux`}></use>
-                </svg>
-                Redux
-              </div>
-            </li>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <div className={s.toolsNextJs}>
-                  <svg className={s.toolsIcon}>
-                    <use href={`${sprite}#icon-next`}></use>
-                  </svg>
-                </div>
-                Next.js
-              </div>
-            </li>
-            <li className={s.toolsItem}>
-              <div className={s.toolsItemInner}>
-                <svg className={s.toolsIcon}>
-                  <use href={`${sprite}#icon-git`}></use>
-                </svg>
-                Git
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div
-          className={`${s.tabContent} ${
-            currentTab === 2 ? s.tabContentCurrent : ""
-          }`}
-        >
-          <p className={s.certification}>
+          <p className={style.certification}>
             <a
               href="https://goit.global/ua/courses/bootcamp/"
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
               Front-end Bootcamp
-              <img src={goIt} alt="GoIt school logo" className={s.goItLogo} />|
-              2022
+              <img
+                src={goIt}
+                alt="GoIt school logo"
+                className={style.goItLogo}
+              />
+              | 2022
             </a>
             <a
               href="https://it-generation.gov.ua"
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className={s.itGenerationLink}
+              className={style.itGenerationLink}
             >
               Member of the
-              <svg className={s.itGenerationLogo}>
+              <svg className={style.itGenerationLogo}>
                 <use href={`${sprite}#itGeneration`}></use>
               </svg>
             </a>

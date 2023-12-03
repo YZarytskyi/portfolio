@@ -104,6 +104,41 @@ export const PROJECTS: ProjectType[] = [
   },
 ];
 
+export const TOOLS = [
+  {
+    name: "HTML 5",
+    icon: "html",
+  },
+  {
+    name: "CSS 3",
+    icon: "css",
+  },
+  {
+    name: "JavaScript",
+    icon: "js",
+  },
+  {
+    name: "TypeScript",
+    icon: "typescript",
+  },
+  {
+    name: "React",
+    icon: "react",
+  },
+  {
+    name: "Redux",
+    icon: "redux",
+  },
+  {
+    name: "Next.js",
+    icon: "next",
+  },
+  {
+    name: "Git",
+    icon: "git",
+  },
+] as const;
+
 export const LINKS = ["home", "about", "projects", "contact"];
 
 export const SOCIAL_LINKS = [

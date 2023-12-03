@@ -1,5 +1,6 @@
 import Tilt from "react-parallax-tilt";
 
+import AnimateInView from "../common/AnimateOnView/AnimateInView.tsx";
 import Tabs from "./Tabs";
 
 import styles from "./About.module.scss";
@@ -18,7 +19,9 @@ export const About = () => {
           transitionSpeed={3000}
           className="tilt"
         >
-          <h2 className="title">About Me</h2>
+          <AnimateInView>
+            <h2 className="title">About Me</h2>
+          </AnimateInView>
         </Tilt>
 
         <div className="tiltMobile">
@@ -26,15 +29,17 @@ export const About = () => {
         </div>
 
         <div className={styles.textImgContainer}>
-          <p className={styles.text}>
-            Through dedicated daily practice and continuous learning, I have
-            acquired a profound understanding of the programming processtyles.
-            This proficiency empowers me to deliver effective solutions and
-            craft code that is clear, readable, and supportable. With each
-            passing day, my experience grows, enhancing my skills and expanding
-            my knowledge. As a result, I approach complex tasks with increased
-            confidence and efficiency.
-          </p>
+          <AnimateInView delay={0.15}>
+            <p className={styles.text}>
+              Through dedicated daily practice and continuous learning, I have
+              acquired a profound understanding of the programming processtyles.
+              This proficiency empowers me to deliver effective solutions and
+              craft code that is clear, readable, and supportable. With each
+              passing day, my experience grows, enhancing my skills and
+              expanding my knowledge. As a result, I approach complex tasks with
+              increased confidence and efficiency.
+            </p>
+          </AnimateInView>
           <div className={styles.circleImgContainer}>
             <div className={styles.circle}></div>
             <div className={styles.photoContainer}>

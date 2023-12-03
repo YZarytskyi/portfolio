@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
 
 import { DESKTOP, MOBILE, PROJECT_TITLES } from "../../constants";
+import AnimateInView from "../common/AnimateOnView/AnimateInView.tsx";
 import MobileSwiper from "./MobileSwiper";
 import ModalProject from "./ModalProject.tsx";
 
@@ -158,7 +159,7 @@ export const Portfolio = () => {
           </h2>
           <div className={styles.presentation}>
             <div className={styles.iMac} ref={desktopImageWrapperRef}>
-              <div className={styles.iMacWrapper} ref={desktopWrapperRef}></div>
+              <div className={styles.iMacWrapper} ref={desktopWrapperRef} />
               <div className={styles.iMacWrapper2}>
                 <img
                   src={desktopImages[prevImgIndex]}
@@ -180,6 +181,7 @@ export const Portfolio = () => {
                 />
               </div>
             </div>
+
             <div className={styles.iphone}>
               <div
                 className={styles.iphoneWrapper}
@@ -240,21 +242,23 @@ export const Portfolio = () => {
             </div>
           </div>
 
-          <ul className={styles.projectList} onClick={onClickSlideChange}>
-            {PROJECT_TITLES.map((title, index) => (
-              <li className={styles.projectItem} key={index}>
-                <button
-                  className={clsx(
-                    styles.projectBtn,
-                    index === activeIndex && styles.activeProject,
-                  )}
-                  data-index={index}
-                >
-                  {title}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <AnimateInView>
+            <ul className={styles.projectList} onClick={onClickSlideChange}>
+              {PROJECT_TITLES.map((title, index) => (
+                <li className={styles.projectItem} key={index}>
+                  <button
+                    className={clsx(
+                      styles.projectBtn,
+                      index === activeIndex && styles.activeProject,
+                    )}
+                    data-index={index}
+                  >
+                    {title}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </AnimateInView>
         </div>
       </section>
 
