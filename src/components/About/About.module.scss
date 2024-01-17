@@ -127,6 +127,7 @@
 .tabs {
   align-self: flex-start;
   margin-top: 1rem;
+
   @media (max-width: 767px) {
     align-self: unset;
   }
