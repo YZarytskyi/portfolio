@@ -1,4 +1,4 @@
-@import '../../vars.scss';
+@import "../../vars.scss";
 
 .about {
   position: relative;
@@ -125,6 +125,7 @@
 // TABS
 
 .tabs {
+  max-width: 100%;
   align-self: flex-start;
   margin-top: 1rem;
 
@@ -164,8 +165,8 @@
   }
 
   &::after {
-    content: '';
-    width: 150%;
+    content: "";
+    width: 120%;
     height: 0.3rem;
     margin-top: 0.8rem;
     display: block;
@@ -189,7 +190,8 @@
   pointer-events: none;
   transform: scale(0.99);
   will-change: transform;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -231,15 +233,12 @@
   }
 }
 
-.certification {
-  padding-right: 15rem;
+.workExperienceSwiper {
+  max-width: 100%;
   font-size: 1.7rem;
 
   @media (max-width: 1199px) {
     font-size: 1.5rem;
-  }
-  @media (max-width: 767px) {
-    padding-right: 0;
   }
   @media (max-width: 479px) {
     font-size: 1.35rem;
@@ -256,13 +255,14 @@
     font-weight: 700;
     line-height: 1.6;
     color: $color-accent;
+    background-color: transparent;
 
     &:hover::after {
       transform: scale(1);
     }
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       height: 1px;
       width: 100%;
@@ -274,28 +274,72 @@
     }
   }
 
-  .itGenerationLink {
-    color: $color-main;
-    font-size: 1.3em;
-    margin-bottom: 1.5rem;
+  .companyItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    padding-bottom: 6rem;
 
-    &::after {
-      background-color: $color-main;
+    @media screen and (max-width: 1200px) {
+      gap: 5rem;
+    }
+
+    @media screen and (max-width: 880px) {
+      flex-direction: column;
+      gap: 2rem;
+      padding-left: 1.2rem;
+    }
+
+    .leftSide {
+      align-self: flex-start;
+      white-space: nowrap;
+
+      .companyName {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+
+        @media screen and (max-width: 1200px) {
+          font-size: 1.8rem;
+        }
+      }
+
+      .logo {
+        height: auto;
+        width: 200px;
+        margin-bottom: 1rem;
+
+        @media screen and (max-width: 1200px) {
+          width: 120px;
+        }
+      }
+
+      .position {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+
+        @media screen and (max-width: 1200px) {
+          font-size: 1.6rem;
+        }
+      }
+
+      .date {
+        font-size: 1.6rem;
+
+        @media screen and (max-width: 1200px) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    .responsibilities {
+      list-style: disc;
     }
   }
-}
 
-.goItLogo {
-  width: 3.5em;
-  margin-top: 0.1rem;
-  display: inline;
-  background: linear-gradient(to right, #e9e9e9 43%, transparent 58%, #e9e9e9 58%);
-  filter: drop-shadow(0 0 0.8px $color-accent);
-}
-
-.itGenerationLogo {
-  fill: currentColor;
-  width: 7.3em;
-  height: 1.4em;
-  filter: drop-shadow(0 0 0.8px currentColor);
+  :global(.swiper-pagination-bullet) {
+    background-color: $color-accent;
+  }
 }

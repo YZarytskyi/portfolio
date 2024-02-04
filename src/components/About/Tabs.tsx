@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { TOOLS } from "../../constants";
+import { TOOLS, WORK_EXPERIENCE } from "../../constants";
 import AnimateInView from "../common/AnimateOnView/AnimateInView.tsx";
 import ToolItem from "./ToolItem.tsx";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import style from "./About.module.scss";
-
-import goIt from "../../assets/goIt.png";
-import sprite from "../../assets/icons.svg";
+import "swiper/css";
 
 const Tabs = () => {
   const [currentTab, setCurrentTab] = useState(1);
@@ -37,7 +39,7 @@ const Tabs = () => {
               }`}
               onClick={() => toggleTab(2)}
             >
-              Certification
+              Work Experience
             </button>
           </li>
         </ul>
@@ -63,37 +65,56 @@ const Tabs = () => {
             currentTab === 2 ? style.tabContentCurrent : ""
           }`}
         >
-          <p className={style.certification}>
-            <a
-              href="https://goit.global/ua/courses/bootcamp/"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              Front-end Bootcamp
-              <img
-                src={goIt}
-                alt="GoIt school logo"
-                className={style.goItLogo}
-              />
-              | 2022
-            </a>
-            <a
-              href="https://it-generation.gov.ua"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className={style.itGenerationLink}
-            >
-              Member of the
-              <svg className={style.itGenerationLogo}>
-                <use href={`${sprite}#itGeneration`}></use>
-              </svg>
-            </a>
-            Intensive 5-month-long course, with over 500 hours of coding. HTML,
-            CSS, Javascript, React, Node JS, additional coursework on soft
-            skills, teamwork, project management, agile methodologies, tools
-            like Redux state management library, Firebase Cloud database, Jest
-            testing framework. Built projects from zero to production level.
-          </p>
+          <Swiper
+            pagination={{
+              clickable: true,
+            }}
+            slidesPerView={1}
+            spaceBetween={10}
+            loop={true}
+            autoHeight={true}
+            modules={[Pagination, Navigation]}
+            className={style.workExperienceSwiper}
+          >
+            {WORK_EXPERIENCE.map((company) => (
+              <SwiperSlide className={style.companyItem} key={company.company}>
+                <div className={style.leftSide}>
+                  {company.href ? (
+                    <a
+                      href={company.href}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className={style.link}
+                    >
+                      <p className={style.companyName}>{company.company}</p>
+                      <img
+                        src={company.logo}
+                        alt={company.alt}
+                        className={style.logo}
+                      />
+                    </a>
+                  ) : (
+                    <>
+                      <p className={style.companyName}>{company.company}</p>
+                      <img
+                        src={company.logo}
+                        alt={company.alt}
+                        className={style.logo}
+                      />
+                    </>
+                  )}
+                  <p className={style.position}>{company.position}</p>
+                  <p className={style.date}>{company.date}</p>
+                </div>
+
+                <ul className={style.responsibilities}>
+                  {company.responsibilities.map((responsibility, index) => (
+                    <li key={index}>{responsibility}</li>
+                  ))}
+                </ul>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>

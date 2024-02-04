@@ -15,7 +15,7 @@
     "react-dom": "^18.2.0",
     "react-parallax-tilt": "^1.7.173",
     "react-voice-visualizer": "^1.8.1",
-    "swiper": "^11.0.4"
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",

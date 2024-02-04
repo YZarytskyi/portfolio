@@ -4,9 +4,11 @@ import crypto from "../assets/crypto1.jpg";
 import crypto2 from "../assets/crypto2.jpg";
 import filmoteka2 from "../assets/filmoteka2.jpg";
 import filmoteka from "../assets/filmoteka.jpg";
+import freelanceIcon from "../assets/freelance.jpg";
 import sprite from "../assets/icons.svg";
 import jazzRender2 from "../assets/jazzRender2.png";
 import jazzRender from "../assets/jazzRender.png";
+import lunaEdgeIcon from "../assets/lunaEdge.jpg";
 import schoolHack2 from "../assets/schoolHack2.jpg";
 import schoolHack from "../assets/schoolHack.jpg";
 import wallet2 from "../assets/wallet2.png";
@@ -157,9 +159,33 @@ export const SOCIAL_LINKS = [
     link: "https://github.com/YZarytskyi",
     icon: `${sprite}#icon-github`,
   },
+];
+
+export const WORK_EXPERIENCE = [
   {
-    name: "Instagram",
-    link: "https://www.instagram.com/y.zarytskyi/",
-    icon: `${sprite}#icon-instagram`,
+    company: "Luna Edge",
+    logo: lunaEdgeIcon,
+    alt: "Luna Edge",
+    href: "https://jobs.dou.ua/companies/luna-edge/",
+    position: "Frontend Developer",
+    date: "Apr 2023 - 2024",
+    responsibilities: [
+      "Developed and implemented a proprietary library, react-voice-visualizer, seamlessly integrated into all company projects in production. My library enhanced the audio-visual aspects of our applications, elevating the overall user experience.",
+      "Led the end-to-end development of multiple projects utilizing an advanced tech stack including React, TypeScript, Redux, Vite, Web3.js and other technologies. Incorporated cutting-edge AI technologies to stay at the forefront of industry trends, delivering solutions that embraced innovation and efficiency.",
+      "Engaged in direct and open communication with key stakeholders, including the CEO, Tech Lead, and designer. Proactively collaborated to gather comprehensive project requirements, provided regular updates, and ensured alignment on tasks. This facilitated a streamlined development process and strengthened the overall synergy within the team.",
+    ],
+  },
+  {
+    company: "Freelance",
+    logo: freelanceIcon,
+    alt: "Freelance",
+    href: "",
+    position: "Frontend Developer",
+    date: "Jun 2022 - Apr 2023",
+    responsibilities: [
+      "Built web applications with React, Next.js, TypeScript, ensuring high performance and responsiveness. Leveraged the power of these cutting-edge technologies to create dynamic and user-friendly interfaces.",
+      "Collaborated remotely with clients to gather project requirements, and deliver customized frontend solutions that met their specific needs and expectations. Conducted regular virtual meetings and utilized collaboration tools to keep clients updated on the project's progress.",
+      "Implemented various performance optimization techniques, such as lazy loading of components, image optimization, and minimizing the use of unnecessary dependencies. Conducted thorough performance audits using tools like Lighthouse to identify and address any bottlenecks.",
+    ],
   },
 ];
